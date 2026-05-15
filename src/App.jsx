@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import QuickMenu from './components/QuickMenu'
@@ -9,7 +9,7 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -17,7 +17,7 @@ function App() {
       </Routes>
       <Footer />
       <QuickMenu />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
