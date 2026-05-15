@@ -24,16 +24,20 @@ export default function DetailsPage() {
 
       {/* 신청하기 상세안내 영역 */}
       <section className="application-details">
-        <div className="details-header">
-          <div className="image-container">
-            <img src={placeholderImg} alt="프로그램 대표 이미지" className="main-image" />
-          </div>
-          <div className="title-container">
-            <span className="status-badge">접수중</span>
-            <h3 className="program-title">공공사이트 개선 체험 프로그램 (Placeholder)</h3>
-            <p className="program-description">
-              이 프로그램은 공공 웹사이트의 접근성과 편의성을 높이기 위한 안티그래비티의 특별 체험 프로그램입니다.
-            </p>
+        {/* 이미지 신청하기 */}
+        <div className="image-apply-container">
+          <img src={placeholderImg} alt="프로그램 대표 이미지" className="program-main-image" />
+          <button className="btn-apply-program-full">신청하기</button>
+        </div>
+
+        {/* Program description container */}
+        <div className="program-desc-container">
+          <h3 className="program-title-new">
+            &lt;그린그린 뮤지엄: 별가루 신비정원&gt; 어린이 단체 전시해설 프로그램(5월)
+          </h3>
+          <div className="exhibition-info">
+            <div className="exhibition-logo-placeholder" aria-label="수원시립만석전시관 로고"></div>
+            <span className="exhibition-name">수원시립만석전시관</span>
           </div>
         </div>
 

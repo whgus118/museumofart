@@ -50,51 +50,74 @@
   flex-direction: column;
 }
 
-/* 헤더 영역 (이미지 + 타이틀) */
-.details-header {
-  border-bottom: 1px solid #eeeeee;
+/* 헤더 영역 (이미지 + 신청 버튼 + 제목) */
+.image-apply-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
 }
 
-.image-container {
+.program-main-image {
   width: 100%;
-  height: 240px;
-  overflow: hidden;
-}
-
-.main-image {
-  width: 100%;
-  height: 100%;
+  height: 236px;
   object-fit: cover;
+  display: block;
 }
 
-.title-container {
-  padding: 24px;
-}
-
-.status-badge {
-  display: inline-block;
-  background-color: #ff4757;
+.btn-apply-program-full {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 32px);
+  margin: 0 16px;
+  background-color: #0e57d0;
   color: #ffffff;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  margin-bottom: 12px;
+  padding: 14px 14px;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.program-title {
+.btn-apply-program-full:hover {
+  background-color: #0c4cb5;
+}
+
+.program-desc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 16px 0 16px;
+}
+
+.program-title-new {
   font-size: 1.5rem;
-  font-weight: 800;
-  color: #1f2937;
-  margin: 0 0 12px 0;
-  line-height: 1.4;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.2;
+  margin: 0;
 }
 
-.program-description {
+.exhibition-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exhibition-logo-placeholder {
+  width: 32px;
+  height: 20px;
+  background-color: #e5e7eb;
+  border-radius: 2px;
+}
+
+.exhibition-name {
   font-size: 1rem;
-  color: #4b5563;
-  line-height: 1.6;
-  margin: 0;
+  font-weight: 400;
+  color: #000000;
 }
 
 /* 상세 안내 내용 */
