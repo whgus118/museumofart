@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 import logoImage from '../assets/logo.jpg';
@@ -19,9 +20,9 @@ export default function Header() {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <a href="/" className="logo" aria-label="미술관 홈으로 이동">
+        <Link to="/" className="logo" aria-label="미술관 홈으로 이동">
           <img src={logoImage} alt="미술관 로고" className='header-logo-img' />
-        </a>
+        </Link>
         <div className="header-actions">
           <button className="icon-btn search-btn" aria-label="검색">
             <span aria-hidden="true">🔍</span>

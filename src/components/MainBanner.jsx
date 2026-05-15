@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './MainBanner.css';
 import banner1 from '../assets/MainBanner-1.jpg';
 import banner2 from '../assets/MainBanner-2.jpg';
@@ -15,6 +16,7 @@ const banners = [
 export default function MainBanner() {
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const navigate = useNavigate();
 
   const goNext = useCallback(() => {
     setCurrent((prev) => (prev + 1) % banners.length);
@@ -28,6 +30,10 @@ export default function MainBanner() {
     setIsPlaying(!isPlaying);
   };
 
+  const handleBannerClick = () => {
+    navigate('/details');
+  };
+
   useEffect(() => {
     if (!isPlaying) return;
     const timer = setInterval(goNext, 4000);
@@ -37,7 +43,19 @@ export default function MainBanner() {
   return (
     <section className="main-banner" aria-label="메인 배너">
       <div className="banner-content">
-        <div className="banner-image-wrapper" tabIndex="0" role="button" aria-label={`배너 ${current + 1} 상세 보기`}>
+        <div 
+          className="banner-image-wrapper" 
+          tabIndex="0" 
+          role="button" 
+          aria-label={`배너 ${current + 1} 상세 보기`}
+          onClick={handleBannerClick}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              handleBannerClick();
+            }
+          }}
+          style={{ cursor: 'pointer' }}
+        >
           <img src={banners[current].src} alt={banners[current].alt} className="banner-image" />
         </div>
         
