@@ -1,0 +1,140 @@
+/* 배너 섹션 전체 */
+.main-banner {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 배너 콘텐츠 래퍼 - 이미지+컨트롤 포함 */
+.banner-content {
+  position: relative;
+  width: 100%;
+  max-width: 402px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* 이미지 영역 - 피그마 402x320 비율 = 약 1.256:1 */
+.banner-image-wrapper {
+  width: 100%;
+  aspect-ratio: 402 / 320;
+  background-color: var(--color-surface);
+  cursor: pointer;
+  transition: var(--transition-base);
+  display: block;
+  overflow: hidden;
+}
+
+/* .banner-image-wrapper:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+} */
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-base);
+}
+
+.banner-image-wrapper:hover .banner-image,
+.banner-image-wrapper:focus .banner-image {
+  filter: brightness(0.9);
+}
+
+/* ===== 하단 컨트롤 바 ===== */
+/* 피그마: 이미지 위에 겹쳐서 하단 16px, 좌우 16px 위치 */
+.banner-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 왼쪽: 인디케이터 숫자칸 (88x44) */
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 88px;
+  height: 44px;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: var(--radius-full);
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.indicator-num {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+  color: #fff;
+}
+
+.indicator-total {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 2px;
+}
+
+/* 오른쪽: 버튼 그룹 (164x44, gap 16px) */
+.banner-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 공통 버튼: 44x44 원형 */
+.control-btn {
+  background-color: rgba(0, 0, 0, 0.45);
+  border: none;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-base);
+  color: #fff;
+  /* font-size: 20px; */
+  cursor: pointer;
+}
+
+.control-btn:hover,
+.control-btn:focus {
+  background-color: rgba(0, 0, 0, 0.65);
+  outline: none;
+}
+
+/* 화살표 크기 미세 조정 */
+.prev-btn span,
+.next-btn span {
+  font-size: 28px;
+  margin-top: -4px;
+  display: block;
+}
+
+/* 재생/일시정지 버튼 폰트 크기 */
+.play-pause-btn span {
+  line-height: 1;
+  display: block;
+}
+
+/* || 아이콘 */
+.play-pause-btn[aria-pressed="false"] span {
+  font-size: 16px;
+  transform: scaleY(1.2);
+  letter-spacing: 0.5px;
+}
+
+.play-pause-btn[aria-pressed="true"] span {
+  font-size: 14px;
+  margin-left: 2px;
+}

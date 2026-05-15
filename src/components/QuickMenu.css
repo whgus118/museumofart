@@ -1,0 +1,36 @@
+.quick-menu {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+}
+
+.quick-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quick-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(14, 87, 208, 0.3);
+  transition: var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quick-btn:hover, .quick-btn:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(14, 87, 208, 0.5);
+  outline: none;
+}

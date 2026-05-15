@@ -1,0 +1,61 @@
+:root {
+  /* Colors */
+  --color-background: #FFFFFF;
+  --color-text-primary: #000000;
+  --color-primary: #0E57D0;
+  --color-surface: #F8F8F8;
+  --color-primary-light: #E7EEFA;
+
+  /* Typography */
+  --font-family: 'Pretendard', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+  --font-size-body: 16px;
+  --font-size-heading: 24px;
+  --font-size-min: 12px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-full: 100px;
+
+  /* Effects */
+  --shadow-hover: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  --transition-base: all 0.2s ease-in-out;
+  
+  /* Accessibility */
+  --touch-target-min: 44px;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-family);
+  font-size: clamp(var(--font-size-min), var(--font-size-body), 2rem);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+}
+
+/* 터치 영역 강제 최소화 보장 */
+button, a {
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* 스크린 리더용 숨김 텍스트 (a11y) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
