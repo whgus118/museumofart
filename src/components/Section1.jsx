@@ -3,10 +3,10 @@ import './Section1.css';
 
 export default function Section1() {
   const menuItems = [
-    { title: '이용안내', sub:'(운영시간)', icon: '📝', link: '/guide' },
-    { title: '시설안내', sub:'(편의시설)', icon: '🏛️', link: '/facility' },
-    { title: '체험하기', sub:'(예약/신청)', icon: '🎨', link: '/experience' },
-    { title: '문화프로그램', sub:'살펴보기', icon: '🎭', link: '/program' },
+    { title: '이용안내', sub: '운영시간', icon: 'guide-icon.svg', link: '/guide' },
+    { title: '시설안내', sub: '편의시설', icon: 'facility-icon.svg', link: '/facility' },
+    { title: '체험하기', sub: '예약/신청', icon: 'experience-icon.svg', link: '/experience' },
+    { title: '문화 프로그램', sub: '살펴보기', icon: 'program-icon.svg', link: '/program' },
   ];
 
   return (
@@ -23,10 +23,16 @@ export default function Section1() {
               className="section-1-btn"
               aria-label={`${item.title} ${item.sub} 페이지로 이동`}
             >
-              <div className="btn-icon" aria-hidden="true">{item.icon}</div>
               <div className="btn-text-group">
                 <strong className="btn-title">{item.title}</strong>
                 <span className="btn-sub">{item.sub}</span>
+              </div>
+              <div className="btn-icon" aria-hidden="true">
+                <img 
+                  src={new URL(`../assets/${item.icon}`, import.meta.url).href} 
+                  alt="" 
+                  className="menu-icon-img" 
+                />
               </div>
             </a>
           ))}

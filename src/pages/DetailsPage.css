@@ -1,20 +1,21 @@
 .details-page {
-  padding: 24px 16px;
-  background-color: #f9fafb;
+  padding: 24px 0;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
 /* 상단 체험하기 버튼 영역 */
 .try-action-container {
   width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .btn-try-homepage-banner {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   background-color: transparent;
@@ -22,6 +23,7 @@
   border: none;
   cursor: pointer;
   border-bottom: 1px solid transparent;
+  gap: 8px;
 }
 
 .btn-left {
@@ -43,7 +45,6 @@
 /* 신청하기 상세안내 컨테이너 */
 .application-details {
   background-color: #ffffff;
-  border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   display: flex;

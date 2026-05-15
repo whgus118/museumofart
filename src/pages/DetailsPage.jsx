@@ -14,11 +14,11 @@ export default function DetailsPage() {
             <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon-home" aria-hidden="true">
               <path d="M8 1L1 7V17H15V7L8 1Z" stroke="black" strokeWidth="1.5" strokeLinejoin="round"/>
             </svg>
-            <span className="text">체험하기</span>
+            <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon-chevron" aria-hidden="true">
+              <path d="M1 1.5L5.5 6.5L1 11.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </div>
-          <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon-chevron" aria-hidden="true">
-            <path d="M1 1.5L5.5 6.5L1 11.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <span className="text">체험하기</span>
         </button>
       </section>
 

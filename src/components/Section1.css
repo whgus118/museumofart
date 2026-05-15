@@ -27,44 +27,60 @@
 
 .section-1-btn {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 24px 12px;
-  background-color: var(--color-surface);
-  border-radius: var(--radius-sm);
+  flex-direction: row;
+  padding: 16px;
+  background-color: #f8f9fa; /* 매우 연한 회색 배경 */
+  border-radius: 12px;
   text-decoration: none;
-  transition: var(--transition-base);
-  min-height: calc(var(--touch-target-min) * 2); /* 넉넉한 터치 영역 */
+  transition: all 0.2s ease;
+  min-height: 120px;
+  position: relative; /* 아이콘 절대 배치를 위한 기준 */
+  align-items: flex-start; /* 텍스트가 상단 패딩(16px)에 딱 붙도록 설정 */
 }
 
 .section-1-btn:hover, .section-1-btn:focus {
-  background-color: #EBF2FF; /* hover 시 눈에 띄게 (대략적인 primary 계열 연한 색) */
-  color: var(--color-primary);
-  box-shadow: var(--shadow-hover);
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
   outline: none;
-}
-
-.btn-icon {
-  font-size: 32px;
 }
 
 .btn-text-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2px;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%; /* 텍스트 영역이 전체 너비를 사용하도록 설정 */
 }
+
 .btn-title {
+  font-size: 20px;
+  color: #000000;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap; /* 한 줄로 쭉 나오게 설정 */
+}
+
+.btn-sub {
   font-size: 16px;
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-bold);
+  color: #333333;
+  font-weight: 400;
   line-height: 1.2;
 }
-.btn-sub {
-  font-size: 14px;
-  color: #666;
-  font-weight: var(--font-weight-regular);
-  line-height: 1.2;
+
+.btn-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; /* 레이아웃에 영향을 주지 않도록 절대 배치 */
+  right: 16px;
+  bottom: 16px;
+}
+
+.menu-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
