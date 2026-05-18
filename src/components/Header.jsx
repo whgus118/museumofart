@@ -25,10 +25,18 @@ export default function Header() {
         </Link>
         <div className="header-actions">
           <button className="icon-btn search-btn" aria-label="검색">
-            <span aria-hidden="true">🔍</span>
+            <img 
+              src={new URL('../assets/Search-icon.svg', import.meta.url).href} 
+              alt="" 
+              className="header-icon-img" 
+            />
           </button>
           <button className="icon-btn menu-btn" aria-label="메뉴 열기">
-            <span aria-hidden="true">☰</span>
+            <img 
+              src={new URL('../assets/Menu-icon.svg', import.meta.url).href} 
+              alt="" 
+              className="header-icon-img" 
+            />
           </button>
         </div>
       </div>

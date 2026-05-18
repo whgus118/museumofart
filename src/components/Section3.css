@@ -60,7 +60,8 @@
 }
 
 .map-badge {
-  background-color: transparent; /* 노란색 배경 제거 */
+  background-color: transparent;
+  /* 노란색 배경 제거 */
   color: #000000;
   font-size: 14px;
   font-weight: var(--font-weight-bold);
@@ -96,7 +97,7 @@
 }
 
 .timeline-panel {
-  padding-left: 8px;
+  padding: 0;
 }
 
 .timeline-list {
@@ -106,60 +107,133 @@
   position: relative;
 }
 
-/* 타임라인 연결선 */
+/* 기본 점선 */
 .timeline-list::before {
   content: '';
   position: absolute;
-  top: 16px;
-  bottom: 32px; /* 마지막 항목 전까지만 선을 그음 */
-  left: 17px;
+  top: 22px;
+  bottom: 22px;
+  left: 15px;
+  /* 32px 컨테이너의 중앙 */
   width: 2px;
-  background-color: #D1D5DB; /* 연한 선 색상 */
+  border-left: 2px dashed #D1D5DB;
   z-index: 1;
 }
 
 .timeline-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 12px;
+  /* 간격을 조금 더 좁게 */
   margin-bottom: 24px;
   position: relative;
-  z-index: 2;
 }
 
 .timeline-item:last-child {
   margin-bottom: 0;
 }
 
-.timeline-icon {
+.timeline-item.is-ride::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  height: 65px;
+  /* 음수 높이 수정 */
+  left: 16px;
+  /* 32px 컨테이너의 중앙 */
+  width: 3px;
+  background-color: var(--color-primary);
+  z-index: 2;
+  transform: translateX(-50%);
+}
+
+.timeline-visual {
   width: 32px;
+  /* 기존 32px에서 줄여서 텍스트가 점에 더 붙게 함 */
   height: 32px;
-  background-color: var(--color-background);
-  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
+}
+
+.timeline-icon {
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-background);
   border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-background);
+  box-sizing: border-box;
+}
+
+.timeline-dot.filled {
+  background-color: var(--color-primary);
+}
+
+.timeline-icon-img {
+  width: 18px;
+  height: 18px;
 }
 
 .timeline-content {
+  padding-top: 7px;
+}
+
+.timeline-content.no-padding {
+  padding-top: 2px;
+}
+
+.timeline-content strong {
   display: flex;
-  flex-direction: column;
-  padding-top: 4px;
-}
-
-.timeline-step {
+  align-items: center;
+  gap: 8px;
   font-size: 16px;
-  color: var(--color-primary);
-  margin-bottom: 4px;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
 }
 
-.timeline-content span {
-  font-size: var(--font-size-body);
-  color: var(--color-text-secondary);
-  line-height: 1.4;
+.line-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.line-badge+.line-badge {
+  margin-left: -4px;
+}
+
+.badge-1 {
+  background-color: #E0F2FE;
+  color: #0369A1;
+}
+
+.badge-suin {
+  background-color: #E2E8F0;
+  color: #475569;
+}
+
+
+
+.timeline-content>span {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
 }
 
 /* 주차 안내 패널 CSS */
@@ -180,15 +254,17 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  /* 간격 통일 */
 }
 
 .parking-dot {
-  width: 10px;
-  height: 10px;
-  min-width: 10px;
+  width: 14px;
+  /* 대중교통 점 크기와 통일 */
+  height: 14px;
+  min-width: 14px;
   border-radius: 50%;
   border: 2px solid var(--color-primary);
-  margin-top: 5px;
+  background-color: var(--color-background);
   box-sizing: border-box;
 }
 
@@ -202,6 +278,7 @@
   gap: 4px;
   font-size: var(--font-size-body);
   color: var(--color-text-primary);
+  padding-top: 7px;
 }
 
 .parking-info-text strong {
@@ -245,25 +322,31 @@
 .parking-fee-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   padding-top: 10px;
 }
 
 .parking-fee-header {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 12px;
+  /* gap 통일 */
   font-size: var(--font-size-body);
   color: var(--color-text-primary);
+}
+
+.parking-fee-header strong {
+  padding-top: 7px;
 }
 
 .fee-note {
   font-size: 13px;
   color: var(--color-text-secondary);
+  padding-top: 8px;
 }
 
 .parking-fee-table {
-  padding-left: 22px;
+  padding-left: 44px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -292,7 +375,7 @@
   font-size: 12px;
   font-weight: var(--font-weight-bold);
   border-radius: var(--radius-full);
-  padding: 4px 12px; 
+  padding: 4px 12px;
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -328,6 +411,7 @@
   flex-direction: column;
   gap: 8px;
   padding-top: 8px;
+  padding-left: 9px;
 }
 
 .fee-benefit-item {
@@ -358,8 +442,10 @@
   flex-direction: column;
   gap: 12px;
   background-color: #F8F8F8;
-  padding: 20px 16px 16px 16px;
-  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+  border-radius: 0;
 }
 
 .discount-notice {
@@ -395,6 +481,8 @@
 .discount-rate {
   color: #575757;
   font-size: 12px;
+  margin-right: 4px;
+  /* 간격을 4px로 조정 */
 }
 
 .discount-list span {
@@ -402,4 +490,3 @@
   color: #575757;
   line-height: 1.4;
 }
-

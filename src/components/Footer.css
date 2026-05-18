@@ -2,7 +2,8 @@
   width: 100%;
   background-color: var(--color-surface);
   border-top: 1px solid #E5E7EB;
-  padding: 40px 16px 60px 16px; /* 모바일에서 하단 여백을 넉넉히 주어 스크롤 끝을 명확히 함 */
+  padding: 40px 16px 60px 16px;
+  /* 모바일에서 하단 여백을 넉넉히 주어 스크롤 끝을 명확히 함 */
   box-sizing: border-box;
 }
 
@@ -29,22 +30,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px; /* 최소 터치 영역 보장 */
-  height: 44px;
-  background-color: #E5E7EB;
-  border-radius: var(--radius-full);
+  width: 32px;
+  height: 32px;
   text-decoration: none;
-  font-size: 20px;
-  transition: var(--transition-base);
-  color: var(--color-text-primary);
+  transition: all 0.2s ease;
 }
 
-.sns-link:hover, .sns-link:focus {
-  background-color: var(--color-primary);
-  color: #fff;
+.sns-link:hover,
+.sns-link:focus {
   transform: translateY(-2px);
   outline: none;
-  box-shadow: var(--shadow-hover);
+  opacity: 0.8;
+}
+
+.sns-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* 약관 링크 리스트 */
@@ -61,18 +63,21 @@
   text-decoration: none;
   color: var(--color-text-primary);
   font-size: 14px;
-  padding: 8px 0; /* 터치 영역 상하 확보 */
+  padding: 8px 0;
+  /* 터치 영역 상하 확보 */
   display: inline-block;
   min-height: calc(var(--touch-target-min) / 1.5);
 }
 
-.term-link:hover, .term-link:focus {
+.term-link:hover,
+.term-link:focus {
   text-decoration: underline;
   color: var(--color-primary);
 }
 
 .privacy-link {
-  font-weight: var(--font-weight-bold); /* 개인정보 처리방침 강조 */
+  font-weight: var(--font-weight-bold);
+  /* 개인정보 처리방침 강조 */
 }
 
 /* 하단 정보 텍스트 */
@@ -82,10 +87,12 @@
   gap: 8px;
 }
 
-.footer-address, .footer-phone {
+.footer-address,
+.footer-phone {
   margin: 0;
   font-size: 14px;
-  color: #4B5563; /* 가독성을 위한 진한 회색 */
+  color: #4B5563;
+  /* 가독성을 위한 진한 회색 */
   line-height: 1.5;
 }
 
@@ -94,11 +101,14 @@
   text-decoration: none;
   font-weight: var(--font-weight-bold);
   display: inline-block;
-  padding: 4px 8px; /* 전화번호 터치 영역 확보 */
-  margin-left: -8px; /* 패딩으로 인한 정렬 틀어짐 방지 */
+  padding: 4px 8px;
+  /* 전화번호 터치 영역 확보 */
+  margin-left: -8px;
+  /* 패딩으로 인한 정렬 틀어짐 방지 */
 }
 
-.footer-phone a:hover, .footer-phone a:focus {
+.footer-phone a:hover,
+.footer-phone a:focus {
   text-decoration: underline;
 }
 
@@ -111,7 +121,33 @@
 
 .footer-copyright p {
   margin: 0;
-  font-size: 12px; /* 최소 규정 12px 충족 */
+  font-size: 12px;
+  /* 최소 규정 12px 충족 */
   color: #6B7280;
+  line-height: 1.4;
+}
+
+/* 디테일 페이지 전용 문의사항 텍스트 */
+.footer-inquiry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 8px;
+  margin-top: -16px;
+}
+
+.footer-inquiry-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #575757;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer-inquiry-subtext {
+  font-size: 14px;
+  font-weight: 400;
+  color: #575757;
+  margin: 0;
   line-height: 1.4;
 }

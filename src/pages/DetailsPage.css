@@ -1,51 +1,56 @@
 .details-page {
-  padding: 24px 0;
+  padding: 0;
   background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'Pretendard', sans-serif;
 }
 
-/* 상단 체험하기 버튼 영역 */
-.try-action-container {
-  width: 100%;
-  padding: 0 16px;
-  box-sizing: border-box;
-}
-
-.btn-try-homepage-banner {
+/* 브레드크럼 */
+.details-breadcrumb {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  background-color: transparent;
-  padding: 8px 0px 16px 0px;
-  border: none;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
+  padding: 8px 16px 16px 16px;
   gap: 8px;
+}
+
+.btn-breadcrumb {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  min-width: unset;
+  min-height: unset;
+}
+
+.breadcrumb-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.icon-home {
+  display: block;
 }
 
 .btn-left {
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
-.btn-left .text {
-  font-size: 1rem;
-  color: #000000;
-  font-weight: 400;
-}
-
-.icon-home, .icon-chevron {
+.icon-chevron {
   display: block;
+  width: 7px;
+  height: 13px;
 }
 
 /* 신청하기 상세안내 컨테이너 */
 .application-details {
   background-color: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -72,15 +77,16 @@
   align-items: center;
   width: calc(100% - 32px);
   margin: 0 16px;
-  background-color: #0e57d0;
+  background-color: #0E57D0;
   color: #ffffff;
-  padding: 14px 14px;
+  padding: 14px;
   border-radius: 8px;
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 500;
+  font-family: 'Pretendard', sans-serif;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .btn-apply-program-full:hover {
@@ -95,7 +101,7 @@
 }
 
 .program-title-new {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 600;
   color: #000000;
   line-height: 1.2;
@@ -108,104 +114,222 @@
   gap: 8px;
 }
 
-.exhibition-logo-placeholder {
-  width: 32px;
+.exhibition-logo-image {
+  width: auto;
   height: 20px;
-  background-color: #e5e7eb;
-  border-radius: 2px;
+  object-fit: contain;
 }
 
 .exhibition-name {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 400;
   color: #000000;
 }
 
-/* 상세 안내 내용 */
+/* 상세 안내 내용 (기존 표 형식) */
 .details-content {
-  padding: 24px;
+  padding: 24px 16px;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.details-subtitle {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #111827;
-  margin: 0 0 16px 0;
+.status-badges {
+  display: flex;
+  gap: 8px;
 }
 
-.notice-list {
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.info-label {
+  width: 70px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  flex-shrink: 0;
+}
+
+.info-value {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.2;
+}
+
+/* 새로운 모집 공고 섹션 스타일 */
+.recruitment-section {
+  padding: 32px 16px 16px 16px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-top: 8px solid #F3F4F6;
+}
+
+.recruitment-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label-detail {
+  align-self: flex-start;
+  padding: 6px 14px;
+  border: 1px solid #0E57D0;
+  border-radius: 100px;
+  font-size: 16px;
+  color: #0E57D0;
+  font-weight: 500;
+}
+
+.recruitment-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.recruitment-list,
+.part-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
-.notice-item {
-  font-size: 0.95rem;
-  color: #374151;
-  line-height: 1.5;
-  background-color: #f3f4f6;
-  padding: 12px 16px;
-  border-radius: 8px;
+.recruitment-list li,
+.part-list li {
+  font-size: 16px;
+  color: #000000;
   position: relative;
-  padding-left: 36px;
+  padding-left: 14px;
 }
 
-.notice-item::before {
+.recruitment-list li::before,
+.part-list li::before {
   content: "•";
   position: absolute;
-  left: 16px;
-  top: 12px;
-  color: #2563eb;
-  font-weight: bold;
+  left: 0;
+  color: #000000;
 }
 
-/* 인포 푸터 영역 */
-.details-info-footer {
-  background-color: #f8f9fa;
-  padding: 24px;
-  text-align: center;
-  border-top: 1px solid #eeeeee;
+.divider {
+  border: 0;
+  border-top: 1px solid #E5E7EB;
+  margin: 0;
 }
 
-.inquiry-info {
-  font-size: 0.85rem;
-  color: #6b7280;
-  line-height: 1.5;
+.recruitment-part {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.part-header {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.part-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.part-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.notice-text {
+  font-size: 14px !important;
+  color: #575757 !important;
+  padding-left: 14px !important;
+}
+
+/* 주의사항(notice-text) 다음에 오는 일반 항목에 추가 여백 */
+.part-list li:not(.notice-text)+li:not(.notice-text),
+.part-list .notice-text+li:not(.notice-text) {
+  margin-top: 4px;
+}
+
+.notice-text::before {
+  content: "" !important;
+}
+
+.instruction-text {
+  font-size: 16px;
+  color: #000000;
   margin: 0 0 16px 0;
 }
 
-.sns-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
+.remarks-box {
+  background-color: #F8F9FA;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
   margin-bottom: 16px;
 }
 
-.sns-buttons button {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #d1d5db;
-  background-color: #ffffff;
-  color: #374151;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
+.remarks-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #575757;
+  margin: 0 0 8px 0;
 }
 
-.sns-buttons button:hover {
-  background-color: #f3f4f6;
-  border-color: #9ca3af;
-}
-
-.terms-text {
-  font-size: 0.8rem;
-  color: #9ca3af;
-  text-decoration: underline;
+.remarks-list {
+  padding-left: 20px;
   margin: 0;
-  cursor: pointer;
+  color: #000000;
+}
+
+.remarks-list li {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+/* SNS 로고 위 문의사항 배너 */
+.inquiry-banner {
+  background-color: #F8F9FA;
+  padding: 20px 16px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.inquiry-banner-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #575757;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.inquiry-banner-subtext {
+  font-size: 14px;
+  font-weight: 400;
+  color: #575757;
+  margin: 0;
+  line-height: 1.4;
 }
