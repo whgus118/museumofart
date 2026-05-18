@@ -5,6 +5,8 @@ import Footer from './components/Footer'
 import QuickMenu from './components/QuickMenu'
 import Home from './pages/Home'
 import DetailsPage from './pages/DetailsPage'
+import ApplyPage from './pages/ApplyPage'
+import ApplyCompletePage from './pages/ApplyCompletePage'
 import './App.css'
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/details" element={<DetailsPage />} />
+        <Route path="/apply" element={<ApplyPage />} />
+        <Route path="/apply-complete" element={<ApplyCompletePage />} />
       </Routes>
       <Footer />
       <QuickMenu />

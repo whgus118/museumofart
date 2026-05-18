@@ -107,10 +107,17 @@
   cursor: pointer;
 }
 
-.control-btn:hover,
+.control-btn:hover {
+  background-color: rgba(0, 0, 0, 0.55); /* 호버 시 색상 */
+}
+
 .control-btn:focus {
-  background-color: rgba(0, 0, 0, 0.65);
-  outline: none;
+  outline: none; /* 포커스 시 테두리만 제거하고 색상은 유지 */
+}
+
+.control-btn:active,
+.play-pause-btn[aria-pressed="true"] {
+  background-color: rgba(0, 0, 0, 0.65); /* 클릭 시 또는 일시정지 상태일 때 색상 */
 }
 
 /* 화살표 크기 미세 조정 */
