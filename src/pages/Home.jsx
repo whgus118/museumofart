@@ -7,7 +7,7 @@ import Section4 from '../components/Section4';
 export default function Home() {
   return (
     <main id="main-content">
-      <h2 className="sr-only">메인 콘텐츠</h2>
+      <h1 className="sr-only">수원시립만석전시관 어린이 단체 전시해설 프로그램</h1>
       <MainBanner />
       <Section1 />
       <Section2 />

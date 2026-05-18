@@ -10,7 +10,7 @@ export default function DetailsPage() {
   const navigate = useNavigate();
   return (
     <main id="main-content" className="details-page">
-      <h2 className="sr-only">상세안내 페이지</h2>
+      <h1 className="sr-only">전시 체험 프로그램 상세 안내</h1>
 
       {/* 브레드크럼 */}
       <div className="details-breadcrumb">
@@ -33,9 +33,9 @@ export default function DetailsPage() {
 
         {/* Program description container */}
         <div className="program-desc-container">
-          <h3 className="program-title-new">
+          <h2 className="program-title-new">
             &lt;그린그린 뮤지엄: 별가루 신비정원&gt; 어린이 단체 전시해설 프로그램(5월)
-          </h3>
+          </h2>
           <div className="exhibition-info">
             <img src={ExhibitionHallIcon} alt="수원시립만석전시관 로고" className="exhibition-logo-image" />
             <span className="exhibition-name">수원시립만석전시관</span>
@@ -84,9 +84,9 @@ export default function DetailsPage() {
           {/* 파트 1: 모집 타이틀 */}
           <div className="recruitment-header">
             <span className="label-detail">상세 안내</span>
-            <h4 className="recruitment-title">
+            <h3 className="recruitment-title">
               &lt;그린그린 뮤지엄: 별가루 신비정원&gt;(3.24. ~ 7.24.) 유아 단체 도슨트 프로그램 4월 모집
-            </h4>
+            </h3>
             <ul className="recruitment-list">
               <li>1개월 단위로 예약창이 오픈됩니다.</li>
               <li>6월 모집 예약창 : 5월 12일 (화) 오전 10시에 오픈 (※선착순 접수)</li>

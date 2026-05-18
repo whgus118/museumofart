@@ -185,7 +185,7 @@ export default function ApplyPage() {
 
   return (
     <main id="main-content" className="apply-page">
-      <h2 className="sr-only">예약 신청 페이지</h2>
+      <h1 className="sr-only">전시 체험 프로그램 예약 신청</h1>
 
       {/* 브레드크럼 */}
       <div className="apply-breadcrumb-static">
@@ -202,9 +202,9 @@ export default function ApplyPage() {
 
         {/* 프로그램 상단 정보 */}
         <div className="apply-program-info">
-          <h3 className="apply-program-title">
+          <h2 className="apply-program-title">
             &lt;그린그린 뮤지엄: 별가루 신비정원&gt; 어린이 단체 전시해설 프로그램(5월)
-          </h3>
+          </h2>
           <div className="apply-exhibition-info">
             <img src={ExhibitionHallIcon} alt="수원시립만석전시관 로고" className="apply-exhibition-logo" />
             <span className="apply-exhibition-name">수원시립만석전시관</span>
@@ -519,9 +519,9 @@ export default function ApplyPage() {
 
           {/* 신청시 유의사항 */}
           <div className="notice-section">
-            <h4 className="notice-title">
+            <h3 className="notice-title">
               신청시 유의사항
-            </h4>
+            </h3>
             <ul className="notice-list">
               <li>
                 개인정보보호를 위해 주민번호, 주소, 전화번호 등 글 작성시 유의하여 주시기 바랍니다.

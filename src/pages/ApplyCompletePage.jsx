@@ -12,7 +12,7 @@ export default function ApplyCompletePage() {
 
   return (
     <main id="main-content" className="apply-complete-page">
-      <h2 className="sr-only">예약 신청 완료 페이지</h2>
+      <h1 className="sr-only">전시 체험 프로그램 예약 신청 완료</h1>
 
       {/* 브레드크럼 */}
       <div className="apply-breadcrumb">
