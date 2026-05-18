@@ -1,7 +1,7 @@
 [
   {
-    "page": "예약 신청 페이지 (/#/apply)",
-    "scanTime": "2026-05-18T02:07:41.471Z",
+    "page": "메인 홈 페이지 (/)",
+    "scanTime": "2026-05-18T02:34:54.758Z",
     "status": "PASS",
     "message": "🎉 웹 접근성 표준(WCAG 2.1 AA)을 완벽하게 만족합니다. 발견된 위반 사항이 없습니다!",
     "totalViolations": 0,
@@ -9,7 +9,7 @@
   },
   {
     "page": "상세 안내 페이지 (/#/details)",
-    "scanTime": "2026-05-18T02:07:41.515Z",
+    "scanTime": "2026-05-18T02:34:55.911Z",
     "status": "PASS",
     "message": "🎉 웹 접근성 표준(WCAG 2.1 AA)을 완벽하게 만족합니다. 발견된 위반 사항이 없습니다!",
     "totalViolations": 0,
@@ -17,15 +17,15 @@
   },
   {
     "page": "예약 신청 페이지 (/#/apply)",
-    "scanTime": "2026-05-18T02:07:41.788Z",
+    "scanTime": "2026-05-18T02:34:56.536Z",
     "status": "PASS",
     "message": "🎉 웹 접근성 표준(WCAG 2.1 AA)을 완벽하게 만족합니다. 발견된 위반 사항이 없습니다!",
     "totalViolations": 0,
     "violations": []
   },
   {
-    "page": "상세 안내 페이지 (/#/details)",
-    "scanTime": "2026-05-18T02:07:42.787Z",
+    "page": "예약 완료 안내 페이지 (/#/apply-complete)",
+    "scanTime": "2026-05-18T02:34:57.227Z",
     "status": "PASS",
     "message": "🎉 웹 접근성 표준(WCAG 2.1 AA)을 완벽하게 만족합니다. 발견된 위반 사항이 없습니다!",
     "totalViolations": 0,

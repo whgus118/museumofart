@@ -32,7 +32,7 @@ export default function ApplyCompletePage() {
       </div>
 
       <section className="complete-content">
-        <h3 className="complete-title">예약 신청이 완료되었습니다.</h3>
+        <h2 className="complete-title">예약 신청이 완료되었습니다.</h2>
 
         <div className="complete-info-container">
           

@@ -117,4 +117,21 @@ test.describe('웹 접근성 자동화 테스트 및 종합 리포팅 (Web Acces
     // 4. 테스트 결과 검증 단언
     expect(results.violations).toEqual([]);
   });
+
+  test('예약 완료 안내 페이지 접근성 검사', async ({ page }) => {
+    // 1. 예약 완료 페이지 진입 및 로딩 대기
+    await page.goto('/#/apply-complete');
+    await page.waitForSelector('.apply-complete-page', { timeout: 5000 });
+
+    // 2. 접근성 진단 분석
+    const results = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'best-practice'])
+      .analyze();
+
+    // 3. 스캔 결과 상시 기록 가동 (PASS 상태 기록 보존)
+    recordAccessibilityScanResult('예약 완료 안내 페이지 (/#/apply-complete)', results.violations);
+
+    // 4. 테스트 결과 검증 단언
+    expect(results.violations).toEqual([]);
+  });
 });
