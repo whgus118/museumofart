@@ -4,13 +4,11 @@ import fs from 'fs';
 import path from 'path';
 
 /**
- * 발견된 접근성 위반 사항들을 취합하여 'accessibility-violations.json' 파일에 안전하게 병합/기록하는 헬퍼 함수
+ * 접근성 진단 스캔 결과를 'accessibility-violations.json' 보고서 파일에 실시간 안전하게 병합/기록하는 헬퍼 함수
  * @param {string} pageName - 스캔을 진행한 페이지 식별 이름
  * @param {Array} violations - Axe-core 엔진이 적출한 에러 배열
  */
-function recordAccessibilityViolations(pageName, violations) {
-  if (!violations || violations.length === 0) return;
-
+function recordAccessibilityScanResult(pageName, violations) {
   const reportPath = path.join(process.cwd(), 'accessibility-violations.json');
   let currentReports = [];
 
@@ -20,17 +18,21 @@ function recordAccessibilityViolations(pageName, violations) {
       const fileContent = fs.readFileSync(reportPath, 'utf-8');
       currentReports = JSON.parse(fileContent);
     } catch (error) {
-      // 파일 파싱 에러 발생 시 빈 배열로 초기화
       currentReports = [];
     }
   }
 
-  // 2. 신규 위반 항목 생성 및 병합
+  // 2. 신규 스캔 결과 엔트리 생성 (PASS / FAIL 여부 및 상세 내용 수록)
+  const isPass = !violations || violations.length === 0;
   const newReportEntry = {
     page: pageName,
     scanTime: new Date().toISOString(),
-    totalViolations: violations.length,
-    violations: violations.map(v => ({
+    status: isPass ? "PASS" : "FAIL",
+    message: isPass 
+      ? "🎉 웹 접근성 표준(WCAG 2.1 AA)을 완벽하게 만족합니다. 발견된 위반 사항이 없습니다!" 
+      : "⚠️ 웹 접근성 위반 사항이 존재합니다. 아래 세부 원인을 분석하여 마크업 구조를 개선하십시오.",
+    totalViolations: violations ? violations.length : 0,
+    violations: (violations || []).map(v => ({
       id: v.id,
       impact: v.impact,
       tags: v.tags,
@@ -51,10 +53,10 @@ function recordAccessibilityViolations(pageName, violations) {
   fs.writeFileSync(reportPath, JSON.stringify(currentReports, null, 2), 'utf-8');
 }
 
-test.describe('웹 접근성 자동화 테스트 및 리포팅 (Web Accessibility Audit & Report)', () => {
+test.describe('웹 접근성 자동화 테스트 및 종합 리포팅 (Web Accessibility Audit & Report)', () => {
 
   test.beforeAll(async () => {
-    // 테스트 시작 전, 이전의 누적 에러 리포트 파일이 남아있다면 초기화(삭제)
+    // 테스트 시작 전, 이전 테스트에서 생성되었던 임시 보고서 파일을 깔끔하게 리셋
     const reportPath = path.join(process.cwd(), 'accessibility-violations.json');
     if (fs.existsSync(reportPath)) {
       try {
@@ -75,8 +77,8 @@ test.describe('웹 접근성 자동화 테스트 및 리포팅 (Web Accessibilit
       .withTags(['wcag2a', 'wcag2aa', 'best-practice'])
       .analyze();
 
-    // 3. 위반 사항 기록 헬퍼 가동
-    recordAccessibilityViolations('메인 홈 페이지 (/)', results.violations);
+    // 3. 스캔 결과 상시 기록 가동 (PASS 상태 기록 보존)
+    recordAccessibilityScanResult('메인 홈 페이지 (/)', results.violations);
 
     // 4. 테스트 결과 검증 단언
     expect(results.violations).toEqual([]);
@@ -92,8 +94,8 @@ test.describe('웹 접근성 자동화 테스트 및 리포팅 (Web Accessibilit
       .withTags(['wcag2a', 'wcag2aa', 'best-practice'])
       .analyze();
 
-    // 3. 위반 사항 기록 헬퍼 가동
-    recordAccessibilityViolations('상세 안내 페이지 (/#/details)', results.violations);
+    // 3. 스캔 결과 상시 기록 가동 (PASS 상태 기록 보존)
+    recordAccessibilityScanResult('상세 안내 페이지 (/#/details)', results.violations);
 
     // 4. 테스트 결과 검증 단언
     expect(results.violations).toEqual([]);
@@ -109,8 +111,8 @@ test.describe('웹 접근성 자동화 테스트 및 리포팅 (Web Accessibilit
       .withTags(['wcag2a', 'wcag2aa', 'best-practice'])
       .analyze();
 
-    // 3. 위반 사항 기록 헬퍼 가동
-    recordAccessibilityViolations('예약 신청 페이지 (/#/apply)', results.violations);
+    // 3. 스캔 결과 상시 기록 가동 (PASS 상태 기록 보존)
+    recordAccessibilityScanResult('예약 신청 페이지 (/#/apply)', results.violations);
 
     // 4. 테스트 결과 검증 단언
     expect(results.violations).toEqual([]);
