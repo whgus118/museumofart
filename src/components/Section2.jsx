@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Section2.css';
 
 import image1 from '../assets/container-image-1.jpg';

@@ -1,4 +1,3 @@
-import React from 'react';
 import './Section4.css';
 
 export default function Section4() {

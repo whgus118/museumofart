@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HomeIcon from '../assets/Home-icon.svg';
 import ExhibitionHallIcon from '../assets/Exhibition-hall-image.png';
@@ -108,27 +108,7 @@ export default function ApplyPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // 연락처 실시간 병합
-  useEffect(() => {
-    if (phone2 || phone3) {
-      setForm(prev => ({ ...prev, phone: `${phone1}-${phone2}-${phone3}` }));
-    } else {
-      setForm(prev => ({ ...prev, phone: '' }));
-    }
-  }, [phone1, phone2, phone3]);
 
-  // 이메일 실시간 병합
-  useEffect(() => {
-    let domain = email2;
-    if (emailDomainSelect !== 'direct') {
-      domain = emailDomainSelect;
-    }
-    if (email1) {
-      setForm(prev => ({ ...prev, email: `${email1}@${domain}` }));
-    } else {
-      setForm(prev => ({ ...prev, email: '' }));
-    }
-  }, [email1, email2, emailDomainSelect]);
 
   const handleEmailDomainChange = (val) => {
     setEmailDomainSelect(val);
@@ -185,7 +165,22 @@ export default function ApplyPage() {
       return;
     }
     setShowAgreementError(false);
-    navigate('/apply-complete', { state: { formData: form } });
+
+    // 최종 폼 제출 시점에 연락처와 이메일 정보를 조합하여 전달 객체 구성
+    const finalPhone = (phone2 || phone3) ? `${phone1}-${phone2}-${phone3}` : '';
+    let domain = email2;
+    if (emailDomainSelect !== 'direct') {
+      domain = emailDomainSelect;
+    }
+    const finalEmail = email1 ? `${email1}@${domain}` : '';
+
+    const finalForm = {
+      ...form,
+      phone: finalPhone,
+      email: finalEmail
+    };
+
+    navigate('/apply-complete', { state: { formData: finalForm } });
   };
 
   return (

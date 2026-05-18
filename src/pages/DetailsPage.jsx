@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DetailsPage.css';
 import placeholderImg from '../assets/MainBanner-1.jpg'; // Using an existing image as placeholder

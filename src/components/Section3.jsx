@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Section3.css";
 
 import mapImage from "../assets/map.jpg";

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import HomeIcon from '../assets/Home-icon.svg';
 import ArrowIcon from '../assets/Arrow-icon.svg';

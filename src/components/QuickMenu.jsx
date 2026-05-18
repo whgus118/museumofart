@@ -1,4 +1,3 @@
-import React from 'react';
 import './QuickMenu.css';
 
 export default function QuickMenu() {

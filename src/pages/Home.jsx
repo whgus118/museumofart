@@ -1,4 +1,3 @@
-import React from 'react';
 import MainBanner from '../components/MainBanner';
 import Section1 from '../components/Section1';
 import Section2 from '../components/Section2';
