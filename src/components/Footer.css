@@ -37,7 +37,7 @@
 }
 
 .sns-link:hover,
-.sns-link:focus {
+.sns-link:focus-visible {
   transform: translateY(-2px);
   outline: none;
   opacity: 0.8;
@@ -70,7 +70,7 @@
 }
 
 .term-link:hover,
-.term-link:focus {
+.term-link:focus-visible {
   text-decoration: underline;
   color: var(--color-primary);
 }
@@ -108,7 +108,7 @@
 }
 
 .footer-phone a:hover,
-.footer-phone a:focus {
+.footer-phone a:focus-visible {
   text-decoration: underline;
 }
 

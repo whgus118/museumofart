@@ -21,7 +21,10 @@ export default function Section1() {
               href={item.link} 
               className="section-1-btn"
               aria-label={`${item.title} ${item.sub} 페이지로 이동`}
-              onClick={(e) => e.preventDefault()}
+              onClick={(e) => {
+                e.preventDefault();
+                e.currentTarget.blur();
+              }}
             >
               <div className="btn-text-group">
                 <strong className="btn-title">{item.title}</strong>

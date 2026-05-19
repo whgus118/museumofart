@@ -64,13 +64,13 @@
   font-weight: var(--font-weight-bold);
 }
 
-.tab-btn:hover:not(.active), .tab-btn:focus:not(.active) {
+.tab-btn:hover:not(.active), .tab-btn:focus-visible:not(.active) {
   background-color: #EBF2FF;
   color: var(--color-primary);
   outline: none;
 }
 
-.tab-btn:focus {
+.tab-btn:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
@@ -86,7 +86,7 @@
   display: none;
 }
 
-.carousel-container:focus {
+.carousel-container:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }

@@ -15,7 +15,14 @@ export default function Section4() {
       <ul className="branch-list">
         {links.map((link) => (
           <li key={link.id} className="branch-item">
-            <a href={link.url} className="branch-link" onClick={(e) => e.preventDefault()}>
+            <a 
+              href={link.url} 
+              className="branch-link" 
+              onClick={(e) => {
+                e.preventDefault();
+                e.currentTarget.blur();
+              }}
+            >
               <span className="branch-name">{link.name}</span>
               <span className="branch-arrow" aria-hidden="true">{'>'}</span>
             </a>

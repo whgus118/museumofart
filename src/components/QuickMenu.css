@@ -29,7 +29,7 @@
   justify-content: center;
 }
 
-.quick-btn:hover, .quick-btn:focus {
+.quick-btn:hover, .quick-btn:focus-visible {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(14, 87, 208, 0.5);
   outline: none;

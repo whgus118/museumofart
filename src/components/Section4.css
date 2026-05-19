@@ -48,7 +48,7 @@
   border: 1px solid #E5E7EB;
 }
 
-.branch-link:hover, .branch-link:focus {
+.branch-link:hover, .branch-link:focus-visible {
   background-color: #EBF2FF;
   color: var(--color-primary);
   border-color: var(--color-primary);
@@ -65,7 +65,7 @@
 
 /* 호버 시 화살표가 우측으로 살짝 이동하는 마이크로 인터랙션 */
 .branch-link:hover .branch-arrow,
-.branch-link:focus .branch-arrow {
+.branch-link:focus-visible .branch-arrow {
   color: var(--color-primary);
   transform: translateX(4px);
 }

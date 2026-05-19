@@ -17,7 +17,10 @@ export default function Section3() {
           href="/location"
           className="more-link"
           aria-label="찾아오시는 길 더보기"
-          onClick={(e) => e.preventDefault()}
+          onClick={(e) => {
+            e.preventDefault();
+            e.currentTarget.blur();
+          }}
         >
           더보기 +
         </a>
