@@ -1,26 +1,44 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 import logoImage from '../assets/logo.jpg';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-  window.addEventListener('scroll', handleScroll);
-  return () => { 
-    window.removeEventListener('scroll', handleScroll); 
+    window.addEventListener('scroll', handleScroll);
+    return () => { 
+      window.removeEventListener('scroll', handleScroll); 
+    };
+  }, []);
+
+  const handleLogoClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      e.preventDefault();
+      navigate('/');
+      window.scrollTo(0, 0);
+    }
   };
-}, []);
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <Link to="/" className="logo" aria-label="미술관 홈으로 이동">
+        <Link 
+          to="/" 
+          className="logo" 
+          aria-label="미술관 홈으로 이동"
+          onClick={handleLogoClick}
+        >
           <img src={logoImage} alt="미술관 로고" className='header-logo-img' />
         </Link>
         <div className="header-actions">

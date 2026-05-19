@@ -298,8 +298,8 @@
   font-weight: 500;
   color: #575757;
 }
-.weekday-sun { color: #E11D48; }
-.weekday-sat { color: #2563EB; }
+.weekday-sun { color: #B91C1C; }
+.weekday-sat { color: #1D4ED8; }
 
 .calendar-dropdown-grid {
   display: grid;
@@ -327,19 +327,19 @@
 .cell-available-label { font-size: 10px; margin-top: 2px; font-weight: 500; }
 
 .cell-closed {
-  color: #A3A3A3;
+  color: #6B7280;
   cursor: not-allowed;
 }
 .cell-closed-day { font-size: 15px; font-weight: 500; }
-.cell-closed-label { font-size: 10px; margin-top: 2px; color: #A3A3A3; }
+.cell-closed-label { font-size: 10px; margin-top: 2px; color: #6B7280; }
 
 .cell-none {
   opacity: 0.5;
   cursor: not-allowed;
 }
 .cell-none-day { font-size: 15px; font-weight: 400; }
-.cell-none.text-sun { color: #E11D48; }
-.cell-none.text-sat { color: #2563EB; }
+.cell-none.text-sun { color: #B91C1C; }
+.cell-none.text-sat { color: #1D4ED8; }
 .cell-none.text-default { color: #222222; }
 
 /* Participants */

@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
 :root {
   /* Colors */
   --color-background: #FFFFFF;
@@ -27,8 +29,11 @@
 }
 
 /* Base styles */
-body {
+body, button, input, select, textarea {
   font-family: var(--font-family);
+}
+
+body {
   font-size: clamp(var(--font-size-min), var(--font-size-body), 2rem);
   color: var(--color-text-primary);
   background-color: var(--color-background);

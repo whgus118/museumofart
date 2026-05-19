@@ -26,6 +26,16 @@
   min-height: unset;
 }
 
+.icon-chevron {
+  display: block;
+  width: 7px;
+  height: 13px;
+}
+
+.btn-breadcrumb + .icon-chevron {
+  margin-left: -8px;
+}
+
 .btn-left {
   display: flex;
   align-items: center;

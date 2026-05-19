@@ -26,15 +26,15 @@ export default function DetailsPage() {
               className="icon-home"
               aria-hidden="true"
             />
-            <img
-              src={ArrowIcon}
-              alt=""
-              className="icon-chevron"
-              aria-hidden="true"
-            />
           </div>
         </button>
-        <span className="breadcrumb-text">&nbsp;체험하기</span>
+        <img
+          src={ArrowIcon}
+          alt=""
+          className="icon-chevron"
+          aria-hidden="true"
+        />
+        <span className="breadcrumb-text">체험하기</span>
       </div>
 
       {/* 신청하기 상세안내 영역 */}

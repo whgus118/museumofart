@@ -48,6 +48,10 @@
   height: 13px;
 }
 
+.btn-breadcrumb + .icon-chevron {
+  margin-left: -8px;
+}
+
 /* 신청하기 상세안내 컨테이너 */
 .application-details {
   background-color: #ffffff;

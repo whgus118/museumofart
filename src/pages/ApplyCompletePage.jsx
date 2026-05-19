@@ -19,15 +19,11 @@ export default function ApplyCompletePage() {
         <button className="btn-breadcrumb" onClick={() => navigate('/')} aria-label="홈화면으로">
           <div className="btn-left">
             <img src={HomeIcon} alt="" className="icon-home" aria-hidden="true" />
-            <img src={ArrowIcon} alt="" className="icon-chevron" aria-hidden="true" />
           </div>
         </button>
+        <img src={ArrowIcon} alt="" className="icon-chevron" aria-hidden="true" />
         <span className="breadcrumb-text">체험하기</span>
-        <div className="btn-breadcrumb" aria-hidden="true">
-          <div className="btn-left">
-            <img src={ArrowIcon} alt="" className="icon-chevron" aria-hidden="true" />
-          </div>
-        </div>
+        <img src={ArrowIcon} alt="" className="icon-chevron" aria-hidden="true" />
         <span className="breadcrumb-text">예약/신청 완료</span>
       </div>
 

@@ -37,11 +37,6 @@ export default function Footer() {
                 href={sns.url}
                 className="sns-link"
                 aria-label={`${sns.name} 바로가기`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert(`${sns.name} 서비스는 준비 중입니다.`);
-                  e.currentTarget.blur();
-                }}
               >
                 <img
                   src={new URL(`../assets/${sns.icon}`, import.meta.url).href}
