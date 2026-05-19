@@ -227,6 +227,14 @@
   color: #000000;
 }
 
+.part-list.no-dot li {
+  padding-left: 0;
+}
+
+.part-list.no-dot li::before {
+  content: none;
+}
+
 .divider {
   border: 0;
   border-top: 1px solid #E5E7EB;

@@ -160,11 +160,51 @@ export default function ApplyPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!form.date) {
+      alert('참여일을 선택해 주세요.');
+      return;
+    }
+
+    if (!form.applicant.trim()) {
+      alert('신청자 이름을 입력해 주세요.');
+      return;
+    }
+
+    if (!phone2 || !phone3 || phone2.length < 3 || phone3.length < 4) {
+      alert('연락처를 정확히 입력해 주세요.');
+      return;
+    }
+
     if (!agreed) {
       setShowAgreementError(true);
       return;
     }
     setShowAgreementError(false);
+
+    // 이메일 유효성 검사 (입력된 값이 있을 경우)
+    if (email1 || email2 || emailDomainSelect !== 'direct') {
+      if (!email1) {
+        alert('이메일 계정을 입력해 주세요.');
+        return;
+      }
+      
+      let domain = email2;
+      if (emailDomainSelect !== 'direct') {
+        domain = emailDomainSelect;
+      }
+
+      if (!domain) {
+        alert('이메일 도메인을 입력하거나 선택해 주세요.');
+        return;
+      }
+
+      const domainRegex = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!domainRegex.test(domain)) {
+        alert('이메일 도메인 형식이 올바르지 않습니다. 다시 작성해 주세요.');
+        return;
+      }
+    }
 
     // 최종 폼 제출 시점에 연락처와 이메일 정보를 조합하여 전달 객체 구성
     const finalPhone = (phone2 || phone3) ? `${phone1}-${phone2}-${phone3}` : '';
@@ -212,7 +252,7 @@ export default function ApplyPage() {
         </div>
 
         {/* 신청 폼 */}
-        <form className="apply-form" onSubmit={handleSubmit}>
+        <form className="apply-form" onSubmit={handleSubmit} noValidate>
 
           {/* 참여일 */}
           <div className="form-field apply-date-dropdown-container" ref={dropdownRef}>

@@ -559,8 +559,7 @@
 .btn-back:hover {
   background-color: #EBF2FF;
   border-color: #0E57D0;
-  font-weight: 600;
-  color: #0E57D0;
+  color: var(--color-primary);
 }
 .btn-submit {
   flex: 1;

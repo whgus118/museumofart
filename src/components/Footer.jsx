@@ -5,7 +5,8 @@ export default function Footer() {
   const location = useLocation();
   const isDetailsPage = location.pathname === '/details';
   const isApplyPage = location.pathname === '/apply';
-  const showInquiry = isDetailsPage || isApplyPage;
+  const isApplyCompletePage = location.pathname === '/apply-complete';
+  const showInquiry = isDetailsPage || isApplyPage || isApplyCompletePage;
 
   const snsLinks = [
     { name: 'Instagram', icon: 'Instagram-Icon.svg', url: '#' },

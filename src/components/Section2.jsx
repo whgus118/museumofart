@@ -47,7 +47,7 @@ export default function Section2() {
     <section className="section-2" aria-labelledby="section2-title">
       <div className="section-2-header">
         <h2 id="section2-title" className="section-2-title">전시 둘러보기</h2>
-        <a href="/exhibitions" className="more-link" aria-label="전시 둘러보기 더보기">더보기 +</a>
+        <a href="/exhibitions" className="more-link" aria-label="전시 둘러보기 더보기" onClick={(e) => e.preventDefault()}>더보기 +</a>
       </div>
 
       <div className="tab-list" role="tablist" aria-label="전시 상태 선택">

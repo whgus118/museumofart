@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import QuickMenu from './components/QuickMenu'
 import Home from './pages/Home'
+import ScrollToTop from './components/ScrollToTop'
 import DetailsPage from './pages/DetailsPage'
 import ApplyPage from './pages/ApplyPage'
 import ApplyCompletePage from './pages/ApplyCompletePage'
@@ -11,6 +12,7 @@ import './App.css'
 function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
