@@ -60,3 +60,22 @@
   height: 40px;
   object-fit: contain;
 }
+
+/* ==========================================================================
+   Responsive Layout
+   ========================================================================== */
+@media (min-width: 744px) {
+  .header-container {
+    padding: 16px 64px; /* 위아래 패딩 소폭 확대 */
+  }
+  .header-logo-img {
+    height: 40px; /* 로고 크기 확대 */
+  }
+  .header-actions {
+    gap: 12px;
+  }
+  .header-icon-img {
+    width: 48px;
+    height: 48px;
+  }
+}

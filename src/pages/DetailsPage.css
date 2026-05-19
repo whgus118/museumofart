@@ -345,3 +345,101 @@
   margin: 0;
   line-height: 1.4;
 }
+
+/* ==========================================================================
+   Responsive Layout (Tablet & Desktop)
+   ========================================================================== */
+@media (min-width: 744px) {
+  /* 레이아웃 패딩 */
+  .details-breadcrumb,
+  .program-desc-container,
+  .details-content,
+  .recruitment-section,
+  .inquiry-banner {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .program-desc-container {
+    padding-top: 40px;
+  }
+  
+  .details-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .recruitment-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  /* 이미지 영역 */
+  .program-main-image {
+    height: 480px; /* 큰 화면에서는 시원하게 480px 높이 사용 */
+  }
+
+  /* 하단 고정 신청 버튼 여백 조정 */
+  .btn-apply-program-full {
+    width: calc(100% - 128px);
+    margin: 0 64px;
+    padding: 20px;
+    font-size: 28px;
+    border-radius: 12px;
+  }
+
+  /* 텍스트 크기 스케일 업 */
+  .breadcrumb-text {
+    font-size: 20px;
+  }
+
+  .program-title-new {
+    font-size: 32px;
+  }
+
+  .exhibition-name {
+    font-size: 22px;
+  }
+
+  .info-label {
+    width: 90px;
+    font-size: 24px;
+  }
+
+  .info-value {
+    font-size: 24px;
+  }
+
+  .label-detail {
+    font-size: 20px;
+    padding: 8px 18px;
+  }
+
+  .recruitment-title,
+  .part-title {
+    font-size: 28px;
+  }
+
+  .recruitment-list li,
+  .part-list li,
+  .instruction-text,
+  .remarks-title,
+  .remarks-list li {
+    font-size: 22px;
+  }
+
+  .part-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* 캡션/작은 글씨 스케일 업 */
+  .notice-text {
+    font-size: 18px !important;
+  }
+
+  .inquiry-banner-text,
+  .inquiry-banner-subtext {
+    font-size: 18px;
+  }
+}

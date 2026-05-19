@@ -151,3 +151,32 @@
   margin: 0;
   line-height: 1.4;
 }
+
+/* ==========================================================================
+   Responsive Layout
+   ========================================================================== */
+@media (min-width: 744px) {
+  .footer {
+    padding: 60px 64px 80px 64px; /* 위아래 패딩 확대 */
+  }
+  .footer-container {
+    gap: 48px;
+  }
+  .sns-list {
+    gap: 24px;
+  }
+  .sns-link {
+    width: 48px;
+    height: 48px;
+  }
+  .terms-list {
+    gap: 24px;
+  }
+  .term-link {
+    font-size: 18px;
+  }
+  .footer-address,
+  .footer-phone {
+    font-size: 18px;
+  }
+}

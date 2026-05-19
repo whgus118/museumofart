@@ -162,3 +162,54 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* ==========================================================================
+   Responsive Layout
+   ========================================================================== */
+@media (min-width: 744px) {
+  .section-2 {
+    padding: 64px 64px; /* 위아래 패딩 확대 */
+  }
+  .section-2-header {
+    margin-bottom: 40px;
+  }
+  .section-2-title {
+    font-size: 32px;
+  }
+  .more-link {
+    font-size: 24px;
+  }
+  .tab-list {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .tab-btn {
+    font-size: 24px;
+    padding: 12px 24px;
+  }
+  .carousel-track {
+    gap: 24px;
+  }
+  .card-item {
+    flex: 0 0 78%; /* 모바일처럼 두 번째 카드가 보이도록 비율로 설정 */
+    max-width: 591px;
+  }
+  .card-image-wrapper {
+    height: auto; 
+    aspect-ratio: 591 / 431; /* 높이를 유동적으로 조정 */
+  }
+  .card-info {
+    padding: 32px 24px; /* 여백 확대 */
+    gap: 16px;
+  }
+  .card-title {
+    font-size: 28px;
+  }
+  .card-location {
+    font-size: 22px;
+  }
+  .card-description {
+    font-size: 24px;
+    margin-top: 16px;
+  }
+}

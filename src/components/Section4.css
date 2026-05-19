@@ -69,3 +69,26 @@
   color: var(--color-primary);
   transform: translateX(4px);
 }
+
+/* ==========================================================================
+   Responsive Layout
+   ========================================================================== */
+@media (min-width: 744px) {
+  .section-4 {
+    padding: 64px 64px; /* 위아래 패딩 확대 */
+  }
+  .section-4-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .branch-list {
+    gap: 20px;
+  }
+  .branch-link {
+    font-size: 24px;
+    padding: 20px 32px;
+  }
+  .branch-arrow {
+    font-size: 24px;
+  }
+}

@@ -145,3 +145,46 @@
   font-size: 14px;
   margin-left: 2px;
 }
+
+/* ==========================================================================
+   Responsive Layout
+   ========================================================================== */
+@media (min-width: 744px) {
+  .banner-content {
+    max-width: 100%;
+  }
+  .banner-image-wrapper {
+    aspect-ratio: 744 / 400; /* 피그마 태블릿 기준 이미지 높이 반영 */
+  }
+  .banner-controls {
+    left: 64px;
+    right: 64px;
+    bottom: 32px; /* 컨트롤 바 높이가 커진 만큼 하단 여백도 소폭 확보 */
+  }
+  .indicator {
+    height: 64px;
+    min-width: 128px;
+    padding: 0 24px;
+  }
+  .indicator-num,
+  .indicator-total {
+    font-size: 28px;
+  }
+  .control-btn {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+  }
+  .prev-btn span,
+  .next-btn span {
+    font-size: 40px;
+    margin-top: -6px;
+  }
+  .play-pause-btn[aria-pressed="false"] span {
+    font-size: 24px;
+  }
+  .play-pause-btn[aria-pressed="true"] span {
+    font-size: 20px;
+  }
+}

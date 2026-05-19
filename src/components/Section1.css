@@ -84,3 +84,35 @@
   height: 100%;
   object-fit: contain;
 }
+
+/* ==========================================================================
+   Responsive Layout
+   ========================================================================== */
+@media (min-width: 744px) {
+  .section-1 {
+    padding: 96px 64px; /* 위아래 패딩 확대 */
+  }
+  .section-1-title {
+    font-size: 32px;
+    margin-bottom: 40px; /* 제목 아래 여백 확대 */
+  }
+  .section-1-grid {
+    gap: 16px; /* 모바일 12px -> 24px */
+  }
+  .section-1-btn {
+    min-height: 160px; /* 피그마 태블릿 기준 버튼 최소 높이 */
+    padding: 24px 32px; /* 버튼 내부 여백 확대 */
+  }
+  .btn-title {
+    font-size: 28px;
+  }
+  .btn-sub {
+    font-size: 22px;
+  }
+  .btn-icon {
+    width: 60px;
+    height: 60px;
+    right: 24px;
+    bottom: 24px;
+  }
+}

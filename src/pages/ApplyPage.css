@@ -587,3 +587,48 @@
 .btn-submit:hover {
   background-color: #0c4cb5;
 }
+
+/* ==========================================================================
+   Responsive Layout (모바일 -> 태블릿 -> 데스크탑)
+   ========================================================================== */
+
+/* ----------------------------------
+   [1] Mobile (~ 743px)
+   * 참고: 이 파일 상단의 기본 스타일이 모바일(기준) 스타일입니다.
+   * 모바일 구간에서만 특별히 덮어써야 할 경우 아래에 작성합니다.
+   ---------------------------------- */
+@media (max-width: 743px) {
+  /* 모바일 전용 오버라이드 스타일 */
+}
+
+/* ----------------------------------
+   [2] Tablet (744px ~ 1279px)
+   ---------------------------------- */
+@media (min-width: 744px) and (max-width: 1279px) {
+  .apply-breadcrumb,
+  .apply-breadcrumb-static {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .apply-content {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+/* ----------------------------------
+   [3] Desktop (1280px 이상)
+   ---------------------------------- */
+@media (min-width: 1280px) {
+  .apply-breadcrumb,
+  .apply-breadcrumb-static {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .apply-content {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
