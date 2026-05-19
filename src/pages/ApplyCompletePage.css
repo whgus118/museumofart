@@ -139,3 +139,61 @@
 .btn-confirm:hover {
   background-color: #0c4cb5;
 }
+
+/* ==========================================================================
+   Responsive Layout (Tablet & Desktop)
+   ========================================================================== */
+@media (min-width: 744px) {
+  /* 브레드크럼 */
+  .apply-breadcrumb {
+    padding: 12px 64px 20px 64px;
+    gap: 12px;
+  }
+  .breadcrumb-text {
+    font-size: 18px;
+  }
+  .icon-chevron {
+    width: 8px;
+    height: 15px;
+  }
+  .btn-breadcrumb + .icon-chevron {
+    margin-left: -10px;
+  }
+
+  /* 완료 콘텐츠 */
+  .complete-content {
+    padding: 32px 64px 64px 64px;
+  }
+  .complete-title {
+    font-size: 28px;
+    margin-top: 24px;
+    margin-bottom: 48px;
+  }
+
+  /* 정보 컨테이너 */
+  .complete-info-container {
+    padding: 40px;
+    gap: 56px;
+    margin-bottom: 56px;
+  }
+  .info-group {
+    gap: 24px;
+  }
+  .info-row {
+    gap: 16px;
+  }
+  .info-label {
+    font-size: 20px;
+    width: 120px;
+  }
+  .info-value {
+    font-size: 20px;
+  }
+
+  /* 확인 버튼 */
+  .btn-confirm {
+    height: 64px;
+    font-size: 22px;
+    border-radius: 12px;
+  }
+}

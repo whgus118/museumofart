@@ -157,15 +157,15 @@
 }
 
 .info-label {
-  width: 70px;
-  font-size: 20px;
+  width: 72px;
+  font-size: 22px;
   font-weight: 500;
   color: #000000;
   flex-shrink: 0;
 }
 
 .info-value {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
   color: #000000;
   line-height: 1.2;
@@ -360,6 +360,24 @@
     padding-right: 64px;
   }
 
+  /* 브레드크럼 전용 */
+  .details-breadcrumb {
+    padding-top: 12px;
+    padding-bottom: 20px;
+    gap: 12px; /* 항목 간격은 적당히 */
+  }
+  .icon-chevron {
+    width: 8px;
+    height: 15px; /* 텍스트 18px에 비례한 크기 */
+  }
+  .btn-breadcrumb + .icon-chevron {
+    margin-left: -10px;
+  }
+
+  .image-apply-container {
+    gap: 40px;
+  }
+
   .program-desc-container {
     padding-top: 40px;
   }
@@ -376,7 +394,7 @@
 
   /* 이미지 영역 */
   .program-main-image {
-    height: 480px; /* 큰 화면에서는 시원하게 480px 높이 사용 */
+    height: 400px;
   }
 
   /* 하단 고정 신청 버튼 여백 조정 */
@@ -390,56 +408,99 @@
 
   /* 텍스트 크기 스케일 업 */
   .breadcrumb-text {
-    font-size: 20px;
+    font-size: 18px; /* 보조 내비게이션 - 절제된 크기 */
   }
 
+  /* 프로그램 설명 영역 */
+  .program-desc-container {
+    gap: 24px;
+  }
   .program-title-new {
-    font-size: 32px;
+    font-size: 32px; /* 가장 큰 제목 - 위계 최상단 */
   }
-
+  .exhibition-info {
+    gap: 12px;
+  }
+  .exhibition-logo-image {
+    height: 24px;
+  }
   .exhibition-name {
-    font-size: 22px;
+    font-size: 17px; /* 부제 - 제목 아래 작은 텍스트 */
   }
 
+  /* 상세 정보 그리드 */
+  .details-content {
+    gap: 28px;
+  }
+  .info-grid {
+    gap: 20px;
+  }
+  .info-row {
+    gap: 36px;
+  }
   .info-label {
-    width: 90px;
-    font-size: 24px;
+    width: 88px;
+    font-size: 20px; /* 제목(32px)보다 확실히 작게 */
   }
-
   .info-value {
-    font-size: 24px;
+    font-size: 20px;
+  }
+  .status-badges {
+    gap: 12px;
   }
 
+  /* 모집 공고 섹션 */
+  .recruitment-header {
+    gap: 24px; /* 모바일 16px → 24px */
+  }
   .label-detail {
-    font-size: 20px;
+    font-size: 18px; /* 모바일 16px */
     padding: 8px 18px;
   }
-
   .recruitment-title,
   .part-title {
-    font-size: 28px;
+    font-size: 24px; /* 모바일 20px */
   }
-
+  .recruitment-section {
+    gap: 48px; /* 모바일 32px → 48px */
+  }
+  .recruitment-part {
+    gap: 24px; /* 모바일 16px → 24px */
+  }
+  .part-header {
+    gap: 8px;
+  }
+  .part-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .recruitment-list,
+  .part-list {
+    gap: 12px; /* 모바일 8px → 12px */
+  }
   .recruitment-list li,
   .part-list li,
   .instruction-text,
   .remarks-title,
   .remarks-list li {
-    font-size: 22px;
+    font-size: 20px; /* 모바일 16px */
   }
 
-  .part-icon {
-    width: 48px;
-    height: 48px;
-  }
-
-  /* 캡션/작은 글씨 스케일 업 */
+  /* 캡션/작은 글씨 */
   .notice-text {
-    font-size: 18px !important;
+    font-size: 16px !important; /* 모바일 14px */
+  }
+  .remarks-box {
+    padding: 24px;
   }
 
+  /* 문의사항 배너 */
+  .inquiry-banner {
+    padding-top: 32px;
+    gap: 6px;
+  }
   .inquiry-banner-text,
   .inquiry-banner-subtext {
-    font-size: 18px;
+    font-size: 18px; /* 모바일 14px */
   }
 }

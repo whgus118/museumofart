@@ -1,6 +1,6 @@
 .section-1 {
   width: 100%;
-  padding: 64px 16px;
+  padding: 64px 16px 32px 16px;
   background-color: var(--color-background);
   box-sizing: border-box;
 }
@@ -90,7 +90,7 @@
    ========================================================================== */
 @media (min-width: 744px) {
   .section-1 {
-    padding: 96px 64px; /* 위아래 패딩 확대 */
+    padding: 120px 64px 64px 64px; /* 모바일 비율(64/32 = 2:1) 유지 */
   }
   .section-1-title {
     font-size: 32px;

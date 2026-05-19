@@ -1,30 +1,30 @@
-import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import HomeIcon from '../assets/Home-icon.svg';
-import ExhibitionHallIcon from '../assets/Exhibition-hall-image.png';
-import './ApplyPage.css';
+import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import HomeIcon from "../assets/Home-icon.svg";
+import ExhibitionHallIcon from "../assets/Exhibition-hall-image.png";
+import "./ApplyPage.css";
 
 export default function ApplyPage() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    date: '',
-    time: '오전 10시 30분', // 피그마 사양으로 변경
-    applicant: '',
-    participants: '1', // 기본값 1
-    phone: '',
-    email: '',
-    remarks: '', // 비고 신설
+    date: "",
+    time: "오전 10시 30분", // 피그마 사양으로 변경
+    applicant: "",
+    participants: "1", // 기본값 1
+    phone: "",
+    email: "",
+    remarks: "", // 비고 신설
   });
 
   // 연락처 분할 관리를 위한 로컬 상태
-  const [phone1, setPhone1] = useState('010');
-  const [phone2, setPhone2] = useState('');
-  const [phone3, setPhone3] = useState('');
+  const [phone1, setPhone1] = useState("010");
+  const [phone2, setPhone2] = useState("");
+  const [phone3, setPhone3] = useState("");
 
   // 이메일 분할 관리를 위한 로컬 상태
-  const [email1, setEmail1] = useState('');
-  const [email2, setEmail2] = useState('');
-  const [emailDomainSelect, setEmailDomainSelect] = useState('direct');
+  const [email1, setEmail1] = useState("");
+  const [email2, setEmail2] = useState("");
+  const [emailDomainSelect, setEmailDomainSelect] = useState("direct");
 
   // 개인정보 수집 동의 상태 신설
   const [agreed, setAgreed] = useState(false);
@@ -48,106 +48,124 @@ export default function ApplyPage() {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsDropdownOpen(false);
       }
-      if (phoneDropdownRef.current && !phoneDropdownRef.current.contains(e.target)) {
+      if (
+        phoneDropdownRef.current &&
+        !phoneDropdownRef.current.contains(e.target)
+      ) {
         setIsPhoneDropdownOpen(false);
       }
-      if (emailDropdownRef.current && !emailDropdownRef.current.contains(e.target)) {
+      if (
+        emailDropdownRef.current &&
+        !emailDropdownRef.current.contains(e.target)
+      ) {
         setIsEmailDropdownOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener("mousedown", handleOutsideClick);
     return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
 
   // 2026년 5월 달력 일수 데이터 (1일은 금요일이므로 앞에 5개의 빈 칸이 필요함)
   const calendarDays = [
-    { day: null }, { day: null }, { day: null }, { day: null }, { day: null }, // 일~목 빈칸
-    { day: 1, status: 'closed' },
-    { day: 2, status: 'none' },
-    { day: 3, status: 'none' },
-    { day: 4, status: 'none' },
-    { day: 5, status: 'closed' },
-    { day: 6, status: 'closed' },
-    { day: 7, status: 'closed' },
-    { day: 8, status: 'available', fullDate: '2026-05-08', label: '2026년 5월 8일 (금요일)' },
-    { day: 9, status: 'none' },
-    { day: 10, status: 'none' },
-    { day: 11, status: 'none' },
-    { day: 12, status: 'closed' },
-    { day: 13, status: 'closed' },
-    { day: 14, status: 'closed' },
-    { day: 15, status: 'closed' },
-    { day: 16, status: 'none' },
-    { day: 17, status: 'none' },
-    { day: 18, status: 'none' },
-    { day: 19, status: 'available', fullDate: '2026-05-19', label: '2026년 5월 19일 (화요일)' },
-    { day: 20, status: 'closed' },
-    { day: 21, status: 'closed' },
-    { day: 22, status: 'closed' },
-    { day: 23, status: 'none' },
-    { day: 24, status: 'none' },
-    { day: 25, status: 'none' },
-    { day: 26, status: 'closed' },
-    { day: 27, status: 'closed' },
-    { day: 28, status: 'closed' },
-    { day: 29, status: 'closed' },
-    { day: 30, status: 'none' },
-    { day: 31, status: 'none' }
+    { day: null },
+    { day: null },
+    { day: null },
+    { day: null },
+    { day: null }, // 일~목 빈칸
+    { day: 1, status: "closed" },
+    { day: 2, status: "none" },
+    { day: 3, status: "none" },
+    { day: 4, status: "none" },
+    { day: 5, status: "closed" },
+    { day: 6, status: "closed" },
+    { day: 7, status: "closed" },
+    {
+      day: 8,
+      status: "available",
+      fullDate: "2026-05-08",
+      label: "2026년 5월 8일 (금요일)",
+    },
+    { day: 9, status: "none" },
+    { day: 10, status: "none" },
+    { day: 11, status: "none" },
+    { day: 12, status: "closed" },
+    { day: 13, status: "closed" },
+    { day: 14, status: "closed" },
+    { day: 15, status: "closed" },
+    { day: 16, status: "none" },
+    { day: 17, status: "none" },
+    { day: 18, status: "none" },
+    {
+      day: 19,
+      status: "available",
+      fullDate: "2026-05-19",
+      label: "2026년 5월 19일 (화요일)",
+    },
+    { day: 20, status: "closed" },
+    { day: 21, status: "closed" },
+    { day: 22, status: "closed" },
+    { day: 23, status: "none" },
+    { day: 24, status: "none" },
+    { day: 25, status: "none" },
+    { day: 26, status: "closed" },
+    { day: 27, status: "closed" },
+    { day: 28, status: "closed" },
+    { day: 29, status: "closed" },
+    { day: 30, status: "none" },
+    { day: 31, status: "none" },
   ];
 
   // 선택된 날짜 레이블 반환 함수
   const getSelectedDateLabel = () => {
-    if (!form.date) return '날짜 선택';
-    const found = calendarDays.find(d => d.fullDate === form.date);
-    return found ? found.label : '날짜 선택';
+    if (!form.date) return "날짜 선택";
+    const found = calendarDays.find((d) => d.fullDate === form.date);
+    return found ? found.label : "날짜 선택";
   };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-
-
   const handleEmailDomainChange = (val) => {
     setEmailDomainSelect(val);
-    if (val !== 'direct') {
+    if (val !== "direct") {
       setEmail2(val);
     } else {
-      setEmail2('');
+      setEmail2("");
     }
   };
 
   // 참여인원 직접 입력 및 한계 제어 로직
   const handleParticipantsChange = (e) => {
-    const val = e.target.value.replace(/[^0-9]/g, ''); // 숫자 이외 제거
-    setForm(prev => ({ ...prev, participants: val }));
+    const val = e.target.value.replace(/[^0-9]/g, ""); // 숫자 이외 제거
+    setForm((prev) => ({ ...prev, participants: val }));
   };
 
   const handleParticipantsBlur = () => {
     const num = parseInt(form.participants, 10);
     if (isNaN(num) || num < 1) {
-      setForm(prev => ({ ...prev, participants: '1' }));
+      setForm((prev) => ({ ...prev, participants: "1" }));
     } else if (num > 20) {
-      setForm(prev => ({ ...prev, participants: '20' }));
+      setForm((prev) => ({ ...prev, participants: "20" }));
     }
   };
 
   // 참여인원 증감 로직
   const decreaseParticipants = () => {
-    const current = parseInt(form.participants || '1', 10);
-    setForm(prev => ({
+    const current = parseInt(form.participants || "1", 10);
+    setForm((prev) => ({
       ...prev,
-      participants: Math.max(1, current - 1).toString()
+      participants: Math.max(1, current - 1).toString(),
     }));
   };
 
   const increaseParticipants = () => {
-    const current = parseInt(form.participants || '1', 10);
-    setForm(prev => ({
+    const current = parseInt(form.participants || "1", 10);
+    setForm((prev) => ({
       ...prev,
-      participants: Math.min(20, current + 1).toString()
+      participants: Math.min(20, current + 1).toString(),
     }));
   };
 
@@ -162,17 +180,17 @@ export default function ApplyPage() {
     e.preventDefault();
 
     if (!form.date) {
-      alert('참여일을 선택해 주세요.');
+      alert("참여일을 선택해 주세요.");
       return;
     }
 
     if (!form.applicant.trim()) {
-      alert('신청자 이름을 입력해 주세요.');
+      alert("신청자 이름을 입력해 주세요.");
       return;
     }
 
     if (!phone2 || !phone3 || phone2.length < 3 || phone3.length < 4) {
-      alert('연락처를 정확히 입력해 주세요.');
+      alert("연락처를 정확히 입력해 주세요.");
       return;
     }
 
@@ -183,44 +201,44 @@ export default function ApplyPage() {
     setShowAgreementError(false);
 
     // 이메일 유효성 검사 (입력된 값이 있을 경우)
-    if (email1 || email2 || emailDomainSelect !== 'direct') {
+    if (email1 || email2 || emailDomainSelect !== "direct") {
       if (!email1) {
-        alert('이메일 계정을 입력해 주세요.');
+        alert("이메일 계정을 입력해 주세요.");
         return;
       }
-      
+
       let domain = email2;
-      if (emailDomainSelect !== 'direct') {
+      if (emailDomainSelect !== "direct") {
         domain = emailDomainSelect;
       }
 
       if (!domain) {
-        alert('이메일 도메인을 입력하거나 선택해 주세요.');
+        alert("이메일 도메인을 입력하거나 선택해 주세요.");
         return;
       }
 
       const domainRegex = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       if (!domainRegex.test(domain)) {
-        alert('이메일 도메인 형식이 올바르지 않습니다. 다시 작성해 주세요.');
+        alert("이메일 도메인 형식이 올바르지 않습니다. 다시 작성해 주세요.");
         return;
       }
     }
 
     // 최종 폼 제출 시점에 연락처와 이메일 정보를 조합하여 전달 객체 구성
-    const finalPhone = (phone2 || phone3) ? `${phone1}-${phone2}-${phone3}` : '';
+    const finalPhone = phone2 || phone3 ? `${phone1}-${phone2}-${phone3}` : "";
     let domain = email2;
-    if (emailDomainSelect !== 'direct') {
+    if (emailDomainSelect !== "direct") {
       domain = emailDomainSelect;
     }
-    const finalEmail = email1 ? `${email1}@${domain}` : '';
+    const finalEmail = email1 ? `${email1}@${domain}` : "";
 
     const finalForm = {
       ...form,
       phone: finalPhone,
-      email: finalEmail
+      email: finalEmail,
     };
 
-    navigate('/apply-complete', { state: { formData: finalForm } });
+    navigate("/apply-complete", { state: { formData: finalForm } });
   };
 
   return (
@@ -231,45 +249,62 @@ export default function ApplyPage() {
       <div className="apply-breadcrumb-static">
         <div className="btn-breadcrumb-static" aria-hidden="true">
           <div className="btn-left">
-            <img src={HomeIcon} alt="" className="icon-home" aria-hidden="true" />
+            <img
+              src={HomeIcon}
+              alt=""
+              className="icon-home"
+              aria-hidden="true"
+            />
           </div>
         </div>
-        <span className="breadcrumb-text">∙&nbsp;&nbsp;체험하기&nbsp;&nbsp;∙&nbsp;&nbsp;예약/신청</span>
+        <span className="breadcrumb-text">
+          ∙&nbsp;&nbsp;체험하기&nbsp;&nbsp;∙&nbsp;&nbsp;예약/신청
+        </span>
       </div>
 
       {/* 예약신청 내용 */}
       <section className="apply-content">
-
         {/* 프로그램 상단 정보 */}
         <div className="apply-program-info">
           <h2 className="apply-program-title">
-            &lt;그린그린 뮤지엄: 별가루 신비정원&gt; 어린이 단체 전시해설 프로그램(5월)
+            &lt;그린그린 뮤지엄: 별가루 신비정원&gt; 어린이 단체 전시해설
+            프로그램(5월)
           </h2>
           <div className="apply-exhibition-info">
-            <img src={ExhibitionHallIcon} alt="수원시립만석전시관 로고" className="apply-exhibition-logo" />
+            <img
+              src={ExhibitionHallIcon}
+              alt="수원시립만석전시관 로고"
+              className="apply-exhibition-logo"
+            />
             <span className="apply-exhibition-name">수원시립만석전시관</span>
           </div>
         </div>
 
         {/* 신청 폼 */}
         <form className="apply-form" onSubmit={handleSubmit} noValidate>
-
           {/* 참여일 */}
-          <div className="form-field apply-date-dropdown-container" ref={dropdownRef}>
+          <div
+            className="form-field apply-date-dropdown-container"
+            ref={dropdownRef}
+          >
             <div className="form-label-header">
               <label className="form-label" htmlFor="apply-date">
                 참여일 <span className="form-required">*</span>
               </label>
-              <span className="form-required-hint">*는 필수입력 항목입니다.</span>
+              <span className="form-required-hint">
+                *는 필수입력 항목입니다.
+              </span>
             </div>
 
             {/* 커스텀 드롭다운 버튼 */}
             <div
               id="apply-date"
-              className={`form-select custom-dropdown ${isDropdownOpen ? 'active' : ''}`}
+              className={`form-select custom-dropdown ${isDropdownOpen ? "active" : ""}`}
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
-              <span className={`apply-date-text ${form.date ? 'has-date' : ''}`}>
+              <span
+                className={`apply-date-text ${form.date ? "has-date" : ""}`}
+              >
                 {getSelectedDateLabel()}
               </span>
             </div>
@@ -281,9 +316,7 @@ export default function ApplyPage() {
             {isDropdownOpen && (
               <div className="calendar-dropdown-popup">
                 {/* 달력 상단 (2026. 5) */}
-                <div className="calendar-dropdown-header">
-                  2026. 5
-                </div>
+                <div className="calendar-dropdown-header">2026. 5</div>
 
                 {/* 요일 헤더 */}
                 <div className="calendar-dropdown-weekdays">
@@ -307,7 +340,7 @@ export default function ApplyPage() {
                     }
 
                     // 날짜 셀 렌더링
-                    if (cell.status === 'available') {
+                    if (cell.status === "available") {
                       return (
                         <div
                           key={`day-${cell.day}`}
@@ -321,7 +354,7 @@ export default function ApplyPage() {
                           <span className="cell-available-label">신청가능</span>
                         </div>
                       );
-                    } else if (cell.status === 'closed') {
+                    } else if (cell.status === "closed") {
                       return (
                         <div
                           key={`day-${cell.day}`}
@@ -333,7 +366,11 @@ export default function ApplyPage() {
                       );
                     } else {
                       // none 상태 (선택 불가능한 일반 날짜)
-                      const textColorClass = isSunday ? 'text-sun' : isSaturday ? 'text-sat' : 'text-default';
+                      const textColorClass = isSunday
+                        ? "text-sun"
+                        : isSaturday
+                          ? "text-sat"
+                          : "text-default";
 
                       return (
                         <div
@@ -352,7 +389,9 @@ export default function ApplyPage() {
 
           {/* 참여시간 */}
           <div className="form-field">
-            <label className="form-label" htmlFor="apply-time">참여시간</label>
+            <label className="form-label" htmlFor="apply-time">
+              참여시간
+            </label>
             <input
               id="apply-time"
               type="text"
@@ -427,15 +466,15 @@ export default function ApplyPage() {
             <div className="phone-input-group">
               <div className="phone-dropdown-container" ref={phoneDropdownRef}>
                 <div
-                  className={`form-select custom-dropdown ${isPhoneDropdownOpen ? 'active' : ''} phone-select`}
+                  className={`form-select custom-dropdown ${isPhoneDropdownOpen ? "active" : ""} phone-select`}
                   onClick={() => setIsPhoneDropdownOpen(!isPhoneDropdownOpen)}
                 >
                   <span className="apply-date-text has-date">{phone1}</span>
                 </div>
-                
+
                 {isPhoneDropdownOpen && (
                   <div className="phone-dropdown-popup">
-                    {['010', '011', '016', '017', '018', '019'].map((num) => (
+                    {["010", "011", "016", "017", "018", "019"].map((num) => (
                       <div
                         key={num}
                         className="phone-dropdown-item"
@@ -457,7 +496,9 @@ export default function ApplyPage() {
                 placeholder="번호"
                 maxLength="4"
                 value={phone2}
-                onChange={(e) => setPhone2(e.target.value.replace(/[^0-9]/g, ''))}
+                onChange={(e) =>
+                  setPhone2(e.target.value.replace(/[^0-9]/g, ""))
+                }
                 required
                 aria-label="연락처 중간 번호"
               />
@@ -468,7 +509,9 @@ export default function ApplyPage() {
                 placeholder="번호"
                 maxLength="4"
                 value={phone3}
-                onChange={(e) => setPhone3(e.target.value.replace(/[^0-9]/g, ''))}
+                onChange={(e) =>
+                  setPhone3(e.target.value.replace(/[^0-9]/g, ""))
+                }
                 required
                 aria-label="연락처 마지막 번호"
               />
@@ -499,22 +542,35 @@ export default function ApplyPage() {
                   placeholder="도메인"
                   value={email2}
                   onChange={(e) => setEmail2(e.target.value)}
-                  disabled={emailDomainSelect !== 'direct'}
+                  disabled={emailDomainSelect !== "direct"}
                   aria-label="이메일 도메인 직접입력"
                 />
-                <div className="phone-dropdown-container" ref={emailDropdownRef}>
+                <div
+                  className="phone-dropdown-container"
+                  ref={emailDropdownRef}
+                >
                   <div
-                    className={`form-select custom-dropdown ${isEmailDropdownOpen ? 'active' : ''} email-select`}
+                    className={`form-select custom-dropdown ${isEmailDropdownOpen ? "active" : ""} email-select`}
                     onClick={() => setIsEmailDropdownOpen(!isEmailDropdownOpen)}
                   >
-                    <span className={`apply-date-text ${emailDomainSelect ? 'has-date' : ''}`}>
-                      {emailDomainSelect === 'direct' ? '직접입력' : emailDomainSelect}
+                    <span
+                      className={`apply-date-text ${emailDomainSelect ? "has-date" : ""}`}
+                    >
+                      {emailDomainSelect === "direct"
+                        ? "직접입력"
+                        : emailDomainSelect}
                     </span>
                   </div>
-                  
+
                   {isEmailDropdownOpen && (
                     <div className="phone-dropdown-popup">
-                      {['direct', 'naver.com', 'hanmail.net', 'gmail.com', 'nate.com'].map((domain) => (
+                      {[
+                        "direct",
+                        "naver.com",
+                        "hanmail.net",
+                        "gmail.com",
+                        "nate.com",
+                      ].map((domain) => (
                         <div
                           key={domain}
                           className="phone-dropdown-item"
@@ -523,7 +579,7 @@ export default function ApplyPage() {
                             setIsEmailDropdownOpen(false);
                           }}
                         >
-                          {domain === 'direct' ? '직접입력' : domain}
+                          {domain === "direct" ? "직접입력" : domain}
                         </div>
                       ))}
                     </div>
@@ -541,7 +597,9 @@ export default function ApplyPage() {
 
           {/* 비고 */}
           <div className="form-field">
-            <label className="form-label" htmlFor="apply-remarks">비고</label>
+            <label className="form-label" htmlFor="apply-remarks">
+              비고
+            </label>
             <textarea
               id="apply-remarks"
               name="remarks"
@@ -551,20 +609,19 @@ export default function ApplyPage() {
               onChange={handleChange}
             />
             <p className="form-hint remarks-hint">
-              1. 기관명, 기관연락{'\n'}
-              2. 대표 교사명, 교사 연락처{'\n'}
+              1. 기관명, 기관연락{"\n"}
+              2. 대표 교사명, 교사 연락처{"\n"}
               3. 아동 연령대
             </p>
           </div>
 
           {/* 신청시 유의사항 */}
           <div className="notice-section">
-            <h3 className="notice-title">
-              신청시 유의사항
-            </h3>
+            <h3 className="notice-title">신청시 유의사항</h3>
             <ul className="notice-list">
               <li>
-                개인정보보호를 위해 주민번호, 주소, 전화번호 등 글 작성시 유의하여 주시기 바랍니다.
+                개인정보보호를 위해 주민번호, 주소, 전화번호 등 글 작성시
+                유의하여 주시기 바랍니다.
               </li>
             </ul>
 
@@ -576,19 +633,33 @@ export default function ApplyPage() {
               }}
               className="agreement-wrapper"
             >
-              <div className={`checkbox-box ${agreed ? 'active' : ''}`}>
+              <div className={`checkbox-box ${agreed ? "active" : ""}`}>
                 {agreed && (
-                  <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 5.5L5 9.5L13 1" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg
+                    width="14"
+                    height="11"
+                    viewBox="0 0 14 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 5.5L5 9.5L13 1"
+                      stroke="white"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 )}
               </div>
-              <span className={`agreement-text ${agreed ? 'active' : ''}`}>
+              <span className={`agreement-text ${agreed ? "active" : ""}`}>
                 위와 같은 사항을 확인 후 개인정보 수집에 동의합니다
               </span>
             </div>
             {showAgreementError && (
-              <p className="agreement-error">개인정보 수집 및 신청 유의사항에 동의해주세요.</p>
+              <p className="agreement-error">
+                개인정보 수집 및 신청 유의사항에 동의해주세요.
+              </p>
             )}
           </div>
 
@@ -596,7 +667,7 @@ export default function ApplyPage() {
           <div className="form-actions">
             <button
               type="button"
-              onClick={() => navigate('/details')}
+              onClick={() => navigate("/details")}
               className="btn-back"
             >
               돌아가기
@@ -614,4 +685,3 @@ export default function ApplyPage() {
     </main>
   );
 }
-

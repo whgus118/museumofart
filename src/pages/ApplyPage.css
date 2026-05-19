@@ -595,7 +595,6 @@
 /* ----------------------------------
    [1] Mobile (~ 743px)
    * 참고: 이 파일 상단의 기본 스타일이 모바일(기준) 스타일입니다.
-   * 모바일 구간에서만 특별히 덮어써야 할 경우 아래에 작성합니다.
    ---------------------------------- */
 @media (max-width: 743px) {
   /* 모바일 전용 오버라이드 스타일 */
@@ -605,15 +604,191 @@
    [2] Tablet (744px ~ 1279px)
    ---------------------------------- */
 @media (min-width: 744px) and (max-width: 1279px) {
-  .apply-breadcrumb,
+  /* 브레드크럼 */
+  .apply-breadcrumb {
+    padding: 12px 64px 20px 64px;
+    gap: 12px;
+  }
   .apply-breadcrumb-static {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding: 12px 64px 20px 64px;
+    gap: 0;
+  }
+  .breadcrumb-text {
+    font-size: 18px;
   }
 
+  /* 신청 콘텐츠 */
   .apply-content {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding: 32px 64px 64px 64px;
+    gap: 48px;
+  }
+
+  /* 프로그램 상단 정보 */
+  .apply-program-info {
+    gap: 28px;
+  }
+  .apply-program-title {
+    font-size: 28px;
+  }
+  .apply-exhibition-info {
+    gap: 12px;
+  }
+  .apply-exhibition-logo {
+    width: 24px;
+    height: 24px;
+  }
+  .apply-exhibition-name {
+    font-size: 18px;
+  }
+
+  /* 폼 전체 */
+  .apply-form {
+    gap: 36px;
+  }
+  .form-field {
+    gap: 16px;
+  }
+  .form-label {
+    font-size: 20px;
+  }
+  .form-input,
+  .form-select {
+    height: 60px;
+    font-size: 20px;
+    padding: 0 20px;
+    border-radius: 10px;
+  }
+  .form-hint {
+    font-size: 16px;
+  }
+  .form-fee-display {
+    height: 60px;
+    font-size: 20px;
+    padding: 0 20px;
+  }
+  .participants-unit {
+    font-size: 20px;
+    right: 20px;
+  }
+
+  /* 제출 버튼 */
+  .btn-apply-submit {
+    height: 68px;
+    font-size: 22px;
+    border-radius: 12px;
+  }
+
+  /* 달력 드롭다운 */
+  .calendar-dropdown-header {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .calendar-dropdown-weekdays {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .calendar-cell {
+    min-height: 60px;
+    padding: 8px 0;
+  }
+  .cell-available-day,
+  .cell-closed-day,
+  .cell-none-day {
+    font-size: 20px;
+  }
+  .cell-available-label,
+  .cell-closed-label {
+    font-size: 13px;
+  }
+
+  /* 참여인원 */
+  .participants-row {
+    gap: 16px;
+  }
+  .participants-text {
+    font-size: 20px;
+  }
+  .participants-buttons-group {
+    height: 60px;
+    width: 110px;
+  }
+  .participants-btn {
+    width: 55px;
+    height: 58px;
+    font-size: 24px;
+  }
+
+  /* 전화번호 */
+  .phone-input-group {
+    gap: 12px;
+  }
+  .phone-select,
+  .phone-input {
+    width: 120px;
+  }
+  .phone-dropdown-item {
+    font-size: 20px;
+    padding: 14px 20px;
+  }
+  .email-at {
+    font-size: 20px;
+  }
+
+  /* 이메일 */
+  .email-input-row {
+    gap: 12px;
+  }
+  .email-input,
+  .email-select {
+    width: 200px;
+  }
+
+  /* 특이사항 */
+  .remarks-input {
+    height: 160px;
+    font-size: 20px;
+    padding: 20px;
+  }
+  .remarks-hint {
+    font-size: 16px;
+  }
+
+  /* 안내사항 */
+  .notice-section {
+    padding-top: 32px;
+  }
+  .notice-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .notice-list {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+  .agreement-wrapper {
+    gap: 12px;
+  }
+  .checkbox-box {
+    width: 28px;
+    height: 28px;
+  }
+  .agreement-text {
+    font-size: 20px;
+  }
+  .agreement-error {
+    font-size: 16px;
+  }
+
+  /* 하단 버튼 */
+  .form-actions {
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .btn-back,
+  .btn-submit {
+    height: 64px;
+    font-size: 22px;
+    border-radius: 12px;
   }
 }
 
@@ -623,12 +798,36 @@
 @media (min-width: 1280px) {
   .apply-breadcrumb,
   .apply-breadcrumb-static {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding: 12px 64px 20px 64px;
+    gap: 12px;
+  }
+  .breadcrumb-text {
+    font-size: 18px;
   }
 
   .apply-content {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding: 32px 64px 64px 64px;
+    gap: 48px;
+  }
+
+  .apply-program-title {
+    font-size: 28px;
+  }
+  .apply-exhibition-name {
+    font-size: 18px;
+  }
+  .form-label {
+    font-size: 20px;
+  }
+  .form-input,
+  .form-select {
+    height: 60px;
+    font-size: 20px;
+    padding: 0 20px;
+  }
+  .btn-apply-submit {
+    height: 68px;
+    font-size: 22px;
+    border-radius: 12px;
   }
 }

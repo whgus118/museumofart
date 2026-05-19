@@ -650,10 +650,10 @@
     margin-top: 6px;
   }
   .parking-discount-info {
-    padding: 32px;
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 8px;
+    padding: 32px 64px;
+    margin-left: -64px;
+    margin-right: -64px;
+    border-radius: 0;
     gap: 24px;
   }
   .discount-list {

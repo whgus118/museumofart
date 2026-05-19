@@ -179,4 +179,8 @@
   .footer-phone {
     font-size: 18px;
   }
+  .footer-inquiry-text,
+  .footer-inquiry-subtext {
+    font-size: 18px;
+  }
 }
