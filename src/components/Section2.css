@@ -3,6 +3,9 @@
   padding: 32px 16px;
   background-color: var(--color-background);
   box-sizing: border-box;
+}
+
+.section-2-container {
   max-width: 1200px;
   margin: 0 auto;
 }

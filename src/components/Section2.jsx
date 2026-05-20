@@ -45,58 +45,60 @@ export default function Section2() {
 
   return (
     <section className="section-2" aria-labelledby="section2-title">
-      <div className="section-2-header">
-        <h2 id="section2-title" className="section-2-title">전시 둘러보기</h2>
-        <a 
-          href="/exhibitions" 
-          className="more-link" 
-          aria-label="전시 둘러보기 더보기" 
-          onClick={(e) => {
-            e.preventDefault();
-            e.currentTarget.blur();
-          }}
-        >
-          더보기 +
-        </a>
-      </div>
-
-      <div className="tab-list" role="tablist" aria-label="전시 상태 선택">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            role="tab"
-            aria-selected={activeTab === tab.id}
-            aria-controls={`panel-${tab.id}`}
-            id={`tab-${tab.id}`}
-            className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab.id)}
+      <div className="section-2-container">
+        <div className="section-2-header">
+          <h2 id="section2-title" className="section-2-title">전시 둘러보기</h2>
+          <a 
+            href="/exhibitions" 
+            className="more-link" 
+            aria-label="전시 둘러보기 더보기" 
+            onClick={(e) => {
+              e.preventDefault();
+              e.currentTarget.blur();
+            }}
           >
-            {tab.label}
-          </button>
-        ))}
-      </div>
+            더보기 +
+          </a>
+        </div>
 
-      <div 
-        id={`panel-${activeTab}`} 
-        role="tabpanel" 
-        aria-labelledby={`tab-${activeTab}`}
-        className="carousel-container"
-        tabIndex="0"
-        aria-label={`${tabs.find(t => t.id === activeTab).label} 리스트. 좌우로 스크롤하여 더 많은 전시를 볼 수 있습니다.`}
-      >
-        <div className="carousel-track">
-          {activeCards.map(card => (
-            <div key={card.id} className="card-item">
-              <div className="card-image-wrapper">
-                <img src={card.image} alt={`${card.title} 포스터 이미지`} className="card-image" />
-              </div>
-              <div className="card-info">
-                <h3 className="card-title">{card.title}</h3>
-                <p className="card-location">{card.location}</p>
-                <p className="card-description">{card.description}</p>
-              </div>
-            </div>
+        <div className="tab-list" role="tablist" aria-label="전시 상태 선택">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              role="tab"
+              aria-selected={activeTab === tab.id}
+              aria-controls={`panel-${tab.id}`}
+              id={`tab-${tab.id}`}
+              className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.label}
+            </button>
           ))}
+        </div>
+
+        <div 
+          id={`panel-${activeTab}`} 
+          role="tabpanel" 
+          aria-labelledby={`tab-${activeTab}`}
+          className="carousel-container"
+          tabIndex="0"
+          aria-label={`${tabs.find(t => t.id === activeTab).label} 리스트. 좌우로 스크롤하여 더 많은 전시를 볼 수 있습니다.`}
+        >
+          <div className="carousel-track">
+            {activeCards.map(card => (
+              <div key={card.id} className="card-item">
+                <div className="card-image-wrapper">
+                  <img src={card.image} alt={`${card.title} 포스터 이미지`} className="card-image" />
+                </div>
+                <div className="card-info">
+                  <h3 className="card-title">{card.title}</h3>
+                  <p className="card-location">{card.location}</p>
+                  <p className="card-description">{card.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

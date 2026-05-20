@@ -16,6 +16,7 @@ const banners = [
 export default function MainBanner() {
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
   const navigate = useNavigate();
 
   const goNext = useCallback(() => {
@@ -40,9 +41,17 @@ export default function MainBanner() {
     return () => clearInterval(timer);
   }, [isPlaying, goNext]);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1280px)');
+    setIsDesktop(mediaQuery.matches);
+    const handler = (e) => setIsDesktop(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
+
   return (
     <section className="main-banner" aria-label="메인 배너">
-      <div className="banner-content">
+      <div className="banner-content" style={isDesktop ? { maxWidth: '1280px' } : {}}>
         <div 
           className="banner-image-wrapper" 
           tabIndex="0" 
@@ -54,13 +63,13 @@ export default function MainBanner() {
               handleBannerClick();
             }
           }}
-          style={{ cursor: 'pointer' }}
+          style={isDesktop ? { cursor: 'pointer', aspectRatio: '1280 / 540' } : { cursor: 'pointer' }}
         >
           <img src={banners[current].src} alt={banners[current].alt} className="banner-image" />
         </div>
         
         {/* 하단 컨트롤: 왼쪽(인디케이터) + 오른쪽(화살표+재생) */}
-        <div className="banner-controls">
+        <div className="banner-controls" style={isDesktop ? { left: '64px', right: '64px', bottom: '32px' } : {}}>
           <div className="indicator" aria-live="polite">
             <span className="sr-only">현재 {current + 1}번째 배너, 총 {banners.length}개</span>
             <span className="indicator-num" aria-hidden="true">{current + 1}</span>
