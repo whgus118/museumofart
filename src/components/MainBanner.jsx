@@ -4,7 +4,7 @@ import './MainBanner.css';
 import banner1 from '../assets/MainBanner-1.jpg';
 import banner2 from '../assets/MainBanner-2.jpg';
 import banner3 from '../assets/MainBanner-3.jpg';
-import banner4 from '../assets/MainBanner-4.jpg';
+import banner4 from '../assets/MainBanner-4.png';
 
 const banners = [
   { src: banner1, alt: '메인 배너 이미지 1' },
