@@ -66,13 +66,13 @@
    ========================================================================== */
 @media (min-width: 744px) {
   .header-container {
-    padding: 16px 64px; /* 위아래 패딩 소폭 확대 */
+    padding: 24px 64px; /* 위아래 패딩 소폭 확대 */
   }
   .header-logo-img {
     height: 40px; /* 로고 크기 확대 */
   }
   .header-actions {
-    gap: 12px;
+    gap: 16px;
   }
   .header-icon-img {
     width: 48px;

@@ -4,7 +4,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Pretendard', sans-serif;
 }
 
 /* 브레드크럼 */
@@ -30,7 +29,6 @@
   font-size: 16px;
   font-weight: 400;
   color: #000000;
-  font-family: 'Pretendard', sans-serif;
 }
 
 .icon-home {
@@ -66,6 +64,7 @@
   flex-direction: column;
   gap: 24px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .program-main-image {
@@ -87,7 +86,6 @@
   border-radius: 8px;
   font-size: 20px;
   font-weight: 500;
-  font-family: 'Pretendard', sans-serif;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
@@ -352,12 +350,33 @@
 @media (min-width: 744px) {
   /* 레이아웃 패딩 */
   .details-breadcrumb,
+  .image-apply-container,
   .program-desc-container,
   .details-content,
   .recruitment-section,
   .inquiry-banner {
     padding-left: 64px;
     padding-right: 64px;
+  }
+
+  /* 태블릿 배치 순서 조정 (브레드크럼 -> 프로그램 설명 -> 이미지 영역 -> 상세내용) */
+  .details-breadcrumb {
+    order: 1;
+  }
+  .program-desc-container {
+    order: 2;
+  }
+  .image-apply-container {
+    order: 3;
+  }
+  .details-content {
+    order: 4;
+  }
+  .recruitment-section {
+    order: 5;
+  }
+  .inquiry-banner {
+    order: 6;
   }
 
   /* 브레드크럼 전용 */
@@ -379,7 +398,8 @@
   }
 
   .program-desc-container {
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 40px;
   }
   
   .details-content {
@@ -399,8 +419,8 @@
 
   /* 하단 고정 신청 버튼 여백 조정 */
   .btn-apply-program-full {
-    width: calc(100% - 128px);
-    margin: 0 64px;
+    width: 100%;
+    margin: 0;
     padding: 20px;
     font-size: 28px;
     border-radius: 12px;

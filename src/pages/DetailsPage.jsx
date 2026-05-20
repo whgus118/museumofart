@@ -12,33 +12,33 @@ export default function DetailsPage() {
     <main id="main-content" className="details-page">
       <h1 className="sr-only">전시 체험 프로그램 상세 안내</h1>
 
-      {/* 브레드크럼 */}
-      <div className="details-breadcrumb">
-        <button
-          className="btn-breadcrumb"
-          onClick={() => navigate("/")}
-          aria-label="홈화면으로"
-        >
-          <div className="btn-left">
-            <img
-              src={HomeIcon}
-              alt=""
-              className="icon-home"
-              aria-hidden="true"
-            />
-          </div>
-        </button>
-        <img
-          src={ArrowIcon}
-          alt=""
-          className="icon-chevron"
-          aria-hidden="true"
-        />
-        <span className="breadcrumb-text">체험하기</span>
-      </div>
-
       {/* 신청하기 상세안내 영역 */}
       <section className="application-details">
+        {/* 브레드크럼 */}
+        <div className="details-breadcrumb">
+          <button
+            className="btn-breadcrumb"
+            onClick={() => navigate("/")}
+            aria-label="홈화면으로"
+          >
+            <div className="btn-left">
+              <img
+                src={HomeIcon}
+                alt=""
+                className="icon-home"
+                aria-hidden="true"
+              />
+            </div>
+          </button>
+          <img
+            src={ArrowIcon}
+            alt=""
+            className="icon-chevron"
+            aria-hidden="true"
+          />
+          <span className="breadcrumb-text">체험하기</span>
+        </div>
+
         {/* 이미지 신청하기 */}
         <div className="image-apply-container">
           <img
