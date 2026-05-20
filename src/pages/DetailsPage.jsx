@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./DetailsPage.css";
-import placeholderImg from "../assets/MainBanner-1.jpg"; // Using an existing image as placeholder
+import placeholderImg from "../assets/MainBanner-1.jpeg"; // Using an existing image as placeholder
 import HomeIcon from "../assets/Home-icon.svg";
 import ArrowIcon from "../assets/Arrow-icon.svg";
 import ExhibitionHallIcon from "../assets/Exhibition-hall-image.png";

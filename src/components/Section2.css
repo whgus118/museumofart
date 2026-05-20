@@ -216,3 +216,28 @@
     margin-top: 16px;
   }
 }
+
+/* ==========================================================================
+   Desktop Layout (1280px+)
+   ========================================================================== */
+@media (min-width: 1280px) {
+  .section-2 {
+    padding: 64px 64px;
+  }
+  .carousel-container {
+    overflow-x: visible; /* 데스크탑에서 스크롤 제거 */
+    scroll-snap-type: none;
+  }
+  .carousel-track {
+    gap: 24px;
+  }
+  .card-item {
+    flex: 1 1 0; /* 3개 카드 균등 배치 */
+    max-width: 560px;
+    scroll-snap-align: none;
+  }
+  .card-image-wrapper {
+    height: auto;
+    aspect-ratio: 591 / 431; /* 태블릿 비율 유지, 너비에 맞춰 높이 조정 */
+  }
+}

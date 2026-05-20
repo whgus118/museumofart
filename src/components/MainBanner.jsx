@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './MainBanner.css';
-import banner1 from '../assets/MainBanner-1.jpg';
+import banner1 from '../assets/MainBanner-1.jpeg';
 import banner2 from '../assets/MainBanner-2.jpg';
 import banner3 from '../assets/MainBanner-3.jpg';
 import banner4 from '../assets/MainBanner-4.png';
