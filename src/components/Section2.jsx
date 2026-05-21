@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import './Section2.css';
 
 import image1 from '../assets/container-image-1.jpg';
@@ -42,6 +42,51 @@ export default function Section2() {
 
   const activeCards = contentData[activeTab];
 
+  const carouselRef = useRef(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+  const velocity = useRef(0);
+  const lastX = useRef(0);
+  const rafId = useRef(null);
+
+  const onMouseDown = useCallback((e) => {
+    cancelAnimationFrame(rafId.current);
+    isDragging.current = true;
+    startX.current = e.pageX - carouselRef.current.offsetLeft;
+    scrollLeft.current = carouselRef.current.scrollLeft;
+    lastX.current = e.pageX;
+    velocity.current = 0;
+    carouselRef.current.style.cursor = 'grabbing';
+    carouselRef.current.style.userSelect = 'none';
+  }, []);
+
+  const onMouseMove = useCallback((e) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.2;
+    velocity.current = e.pageX - lastX.current;
+    lastX.current = e.pageX;
+    carouselRef.current.scrollLeft = scrollLeft.current - walk;
+  }, []);
+
+  const onMouseUpOrLeave = useCallback(() => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    carouselRef.current.style.cursor = 'grab';
+    carouselRef.current.style.userSelect = '';
+
+    // 관성 스크롤
+    const momentum = () => {
+      if (Math.abs(velocity.current) < 0.5) return;
+      carouselRef.current.scrollLeft -= velocity.current * 1.2;
+      velocity.current *= 0.92; // 감속 계수
+      rafId.current = requestAnimationFrame(momentum);
+    };
+    rafId.current = requestAnimationFrame(momentum);
+  }, []);
+
 
   return (
     <section className="section-2" aria-labelledby="section2-title">
@@ -84,6 +129,12 @@ export default function Section2() {
           className="carousel-container"
           tabIndex="0"
           aria-label={`${tabs.find(t => t.id === activeTab).label} 리스트. 좌우로 스크롤하여 더 많은 전시를 볼 수 있습니다.`}
+          ref={carouselRef}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUpOrLeave}
+          onMouseLeave={onMouseUpOrLeave}
+          style={{ cursor: 'grab' }}
         >
           <div className="carousel-track">
             {activeCards.map(card => (
