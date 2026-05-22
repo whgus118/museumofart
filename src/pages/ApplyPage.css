@@ -53,7 +53,6 @@
   font-size: 16px;
   font-weight: 400;
   color: #000000;
-  font-family: 'Pretendard', sans-serif;
 }
 
 /* 예약신청 콘텐츠 */
@@ -77,7 +76,6 @@
   color: #000000;
   line-height: 1.35;
   margin: 0;
-  font-family: 'Pretendard', sans-serif;
 }
 
 .apply-exhibition-info {
@@ -95,7 +93,6 @@
 .apply-exhibition-name {
   font-size: 16px;
   color: #575757;
-  font-family: 'Pretendard', sans-serif;
 }
 
 /* 신청 폼 */
@@ -116,7 +113,6 @@
   font-size: 16px;
   font-weight: 500;
   color: #000000;
-  font-family: 'Pretendard', sans-serif;
 }
 
 .form-required {
@@ -131,7 +127,6 @@
   border-radius: 8px;
   font-size: 16px;
   color: #000000;
-  font-family: 'Pretendard', sans-serif;
   background-color: #ffffff;
   box-sizing: border-box;
   outline: none;
@@ -156,7 +151,6 @@
   border-radius: 8px;
   font-size: 16px;
   color: #000000;
-  font-family: 'Pretendard', sans-serif;
   background-color: #ffffff;
   box-sizing: border-box;
   outline: none;
@@ -188,7 +182,6 @@
   right: 16px;
   font-size: 16px;
   color: #575757;
-  font-family: 'Pretendard', sans-serif;
 }
 
 /* 힌트 텍스트 */
@@ -196,7 +189,6 @@
   font-size: 14px;
   color: #9CA3AF;
   margin: 0;
-  font-family: 'Pretendard', sans-serif;
 }
 
 /* 교육비 */
@@ -208,7 +200,6 @@
   font-size: 16px;
   color: #0E57D0;
   font-weight: 500;
-  font-family: 'Pretendard', sans-serif;
   background-color: #E7EEFA;
   display: flex;
   align-items: center;
@@ -225,7 +216,6 @@
   border-radius: 8px;
   font-size: 18px;
   font-weight: 500;
-  font-family: 'Pretendard', sans-serif;
   cursor: pointer;
   margin-top: 8px;
   transition: background-color 0.2s;

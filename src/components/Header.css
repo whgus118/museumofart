@@ -130,10 +130,9 @@
   }
 
   .gnb-link {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 24px; /* Figma fontSize 24px 반영 */
-    font-weight: 500; /* Figma Medium (500) 반영 */
-    color: #000000;
+    font-size: 24px;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -147,17 +146,17 @@
   .gnb-link::after {
     content: '';
     position: absolute;
-    bottom: -1px; /* GNB 경계선 위에 완벽히 밀착 */
+    bottom: -1px;
     left: 0;
     width: 100%;
-    height: 4px; /* Figma bottom 4px stroke 반영 */
-    background-color: #0E57D0; /* Figma active/hover 브랜드 파란색 */
+    height: 4px;
+    background-color: var(--color-primary);
     transform: scaleX(0);
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .gnb-link:hover {
-    color: #0E57D0;
+    color: var(--color-primary);
   }
 
   .gnb-link:hover::after {
@@ -166,8 +165,8 @@
 
   /* 활성화 상태 (체험하기(예약/신청)이 켜졌을 때) */
   .gnb-link.active {
-    color: #0E57D0;
-    font-weight: 600; /* Medium(500)보다 명확하도록 세미볼드 가중치 */
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
   }
 
   .gnb-link.active::after {

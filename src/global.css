@@ -1,30 +1,74 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
 
 :root {
-  /* Colors */
-  --color-background: #FFFFFF;
-  --color-text-primary: #000000;
-  --color-primary: #0E57D0;
-  --color-surface: #F8F8F8;
-  --color-primary-light: #E7EEFA;
+  /* =====================================================
+     Colors — Primary
+     ===================================================== */
+  --color-background: #FFFFFF;       /* 페이지/카드 기본 배경 */
+  --color-surface: #F8F8F8;          /* 서피스(탭 버튼, 카드 배경) */
+  --color-surface-alt: #F8F9FA;      /* 보조 배경 (코드박스, 인풋 비활성) */
+  --color-primary: #0E57D0;          /* 브랜드 파랑 (버튼, 액티브, 링크) */
+  --color-primary-hover: #0c4cb5;    /* 브랜드 파랑 hover 어두운 톤 */
+  --color-primary-light: #E7EEFA;    /* 브랜드 파랑 연한 배경 */
+  --color-primary-hover-light: #EBF2FF; /* 탭/링크 hover 배경 */
 
-  /* Typography */
+  /* =====================================================
+     Colors — Text
+     ===================================================== */
+  --color-text-primary: #000000;     /* 본문 주 텍스트 */
+  --color-text-dark: #222222;        /* 준 주 텍스트 (살짝 소프트한 검정) */
+  --color-text-secondary: #575757;   /* 보조 텍스트 (설명, 레이블) */
+  --color-text-muted: #9CA3AF;       /* 비활성/placeholder 텍스트 */
+
+  /* =====================================================
+     Colors — Border & Divider
+     ===================================================== */
+  --color-border: #E5E7EB;           /* 기본 테두리/구분선 */
+  --color-border-muted: #C4C4C4;     /* 약한 테두리 (체크박스 등) */
+  --color-border-light: #D1D5DB;     /* 점선 구분선 (타임라인) */
+
+  /* =====================================================
+     Colors — Semantic
+     ===================================================== */
+  --color-error: #D32F2F;            /* 에러/경고 텍스트 */
+  --color-error-dark: #B91C1C;       /* 에러 강조 */
+
+  /* =====================================================
+     Colors — Overlay & Shadow
+     ===================================================== */
+  --color-overlay: rgba(0, 0, 0, 0.45);   /* 배너 이미지 오버레이 */
+  --color-overlay-dark: rgba(0, 0, 0, 0.55); /* 배너 hover 오버레이 */
+  --color-overlay-darker: rgba(0, 0, 0, 0.65); /* 배너 active 오버레이 */
+
+  /* =====================================================
+     Typography
+     ===================================================== */
   --font-family: 'Pretendard', sans-serif;
-  --font-weight-regular: 400;
-  --font-weight-bold: 600;
-  --font-size-body: 16px;
-  --font-size-heading: 24px;
-  --font-size-min: 12px;
+  --font-weight-regular: 400;        /* 본문 기본 */
+  --font-weight-medium: 500;         /* 중간 강조 (GNB, 버튼) */
+  --font-weight-bold: 600;           /* 제목/강조 */
+  --font-size-min: 12px;             /* 최소 (뱃지, 주석) */
+  --font-size-sm: 14px;              /* 보조 텍스트 */
+  --font-size-body: 16px;            /* 본문 기본 */
+  --font-size-heading: 24px;         /* 섹션 제목 */
 
-  /* Border Radius */
+  /* =====================================================
+     Border Radius
+     ===================================================== */
   --radius-sm: 8px;
   --radius-full: 100px;
 
-  /* Effects */
+  /* =====================================================
+     Effects
+     ===================================================== */
   --shadow-hover: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-float: 0 4px 12px rgba(0, 0, 0, 0.08);
   --transition-base: all 0.2s ease-in-out;
-  
-  /* Accessibility */
+
+  /* =====================================================
+     Accessibility
+     ===================================================== */
   --touch-target-min: 44px;
 }
 

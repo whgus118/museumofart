@@ -45,7 +45,6 @@
   font-size: 16px;
   font-weight: 400;
   color: #000000;
-  font-family: 'Pretendard', sans-serif;
 }
 
 /* 완료 콘텐츠 영역 */
@@ -62,7 +61,6 @@
   margin-top: 16px;
   margin-bottom: 32px;
   text-align: center;
-  font-family: 'Pretendard', sans-serif;
 }
 
 /* 정보 컨테이너 */

@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   background-color: var(--color-surface);
-  border-top: 1px solid #E5E7EB;
+  border-top: 1px solid var(--color-border);
   padding: 40px 16px 60px 16px;
   /* 모바일에서 하단 여백을 넉넉히 주어 스크롤 끝을 명확히 함 */
   box-sizing: border-box;
@@ -91,8 +91,7 @@
 .footer-phone {
   margin: 0;
   font-size: 14px;
-  color: #4B5563;
-  /* 가독성을 위한 진한 회색 */
+  color: var(--color-text-secondary);
   line-height: 1.5;
 }
 
@@ -122,8 +121,7 @@
 .footer-copyright p {
   margin: 0;
   font-size: 12px;
-  /* 최소 규정 12px 충족 */
-  color: #6B7280;
+  color: var(--color-text-secondary);
   line-height: 1.4;
 }
 
@@ -138,16 +136,16 @@
 
 .footer-inquiry-text {
   font-size: 14px;
-  font-weight: 500;
-  color: #575757;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.4;
 }
 
 .footer-inquiry-subtext {
   font-size: 14px;
-  font-weight: 400;
-  color: #575757;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.4;
 }

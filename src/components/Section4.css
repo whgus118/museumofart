@@ -51,11 +51,11 @@
   box-sizing: border-box;
   transition: var(--transition-base);
   box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--color-border);
 }
 
 .branch-link:hover, .branch-link:focus-visible {
-  background-color: #EBF2FF;
+  background-color: var(--color-primary-hover-light);
   color: var(--color-primary);
   border-color: var(--color-primary);
   box-shadow: var(--shadow-hover);
@@ -64,7 +64,7 @@
 
 .branch-arrow {
   font-size: 18px;
-  color: #9CA3AF;
+  color: var(--color-text-muted);
   font-weight: var(--font-weight-bold);
   transition: var(--transition-base);
 }

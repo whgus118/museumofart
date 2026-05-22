@@ -61,7 +61,7 @@
   min-width: 88px;
   height: 44px;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: var(--color-overlay);
   border-radius: var(--radius-full);
   padding: 0 16px;
   box-sizing: border-box;
@@ -71,7 +71,7 @@
   font-family: var(--font-family);
   font-weight: var(--font-weight-bold);
   font-size: 16px;
-  color: #fff;
+  color: var(--color-background);
 }
 
 .indicator-total {
@@ -91,7 +91,7 @@
 
 /* 공통 버튼: 44x44 원형 */
 .control-btn {
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: var(--color-overlay);
   border: none;
   width: 44px;
   height: 44px;
@@ -102,13 +102,12 @@
   align-items: center;
   justify-content: center;
   transition: var(--transition-base);
-  color: #fff;
-  /* font-size: 20px; */
+  color: var(--color-background);
   cursor: pointer;
 }
 
 .control-btn:hover {
-  background-color: rgba(0, 0, 0, 0.55); /* 호버 시 색상 */
+  background-color: var(--color-overlay-dark); /* 호버 시 색상 */
 }
 
 .control-btn:focus {
@@ -117,7 +116,7 @@
 
 .control-btn:active,
 .play-pause-btn[aria-pressed="true"] {
-  background-color: rgba(0, 0, 0, 0.65); /* 클릭 시 또는 일시정지 상태일 때 색상 */
+  background-color: var(--color-overlay-darker); /* 클릭 시 또는 일시정지 상태일 때 색상 */
 }
 
 /* 화살표 크기 미세 조정 */

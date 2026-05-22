@@ -68,7 +68,7 @@
 }
 
 .tab-btn:hover:not(.active), .tab-btn:focus-visible:not(.active) {
-  background-color: #EBF2FF;
+  background-color: var(--color-primary-hover-light);
   color: var(--color-primary);
   outline: none;
 }
@@ -116,7 +116,7 @@
 .card-image-wrapper {
   width: 100%;
   height: 208px;
-  background-color: #ddd;
+  background-color: var(--color-border);
   overflow: hidden;
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }

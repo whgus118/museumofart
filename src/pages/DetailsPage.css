@@ -1,6 +1,6 @@
 .details-page {
   padding: 0;
-  background-color: #ffffff;
+  background-color: var(--color-background);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -27,8 +27,8 @@
 
 .breadcrumb-text {
   font-size: 16px;
-  font-weight: 400;
-  color: #000000;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-primary);
 }
 
 .icon-home {
@@ -52,7 +52,7 @@
 
 /* 신청하기 상세안내 컨테이너 */
 .application-details {
-  background-color: #ffffff;
+  background-color: var(--color-background);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -80,19 +80,19 @@
   align-items: center;
   width: calc(100% - 32px);
   margin: 0 16px;
-  background-color: #0E57D0;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-background);
   padding: 14px;
   border-radius: 8px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
 
 .btn-apply-program-full:hover {
-  background-color: #0c4cb5;
+  background-color: var(--color-primary-hover);
 }
 
 .program-desc-container {
@@ -104,8 +104,8 @@
 
 .program-title-new {
   font-size: 24px;
-  font-weight: 600;
-  color: #000000;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
   line-height: 1.2;
   margin: 0;
 }
@@ -124,14 +124,14 @@
 
 .exhibition-name {
   font-size: 16px;
-  font-weight: 400;
-  color: #000000;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-primary);
 }
 
 /* 상세 안내 내용 (기존 표 형식) */
 .details-content {
   padding: 24px 16px;
-  background-color: #ffffff;
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -172,11 +172,11 @@
 /* 새로운 모집 공고 섹션 스타일 */
 .recruitment-section {
   padding: 32px 16px 16px 16px;
-  background-color: #ffffff;
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   gap: 32px;
-  border-top: 8px solid #F3F4F6;
+  border-top: 8px solid var(--color-surface-alt);
 }
 
 .recruitment-header {
@@ -188,11 +188,11 @@
 .label-detail {
   align-self: flex-start;
   padding: 6px 14px;
-  border: 1px solid #0E57D0;
+  border: 1px solid var(--color-primary);
   border-radius: 100px;
   font-size: 16px;
-  color: #0E57D0;
-  font-weight: 500;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
 }
 
 .recruitment-title {
@@ -216,7 +216,7 @@
 .recruitment-list li,
 .part-list li {
   font-size: 16px;
-  color: #000000;
+  color: var(--color-text-primary);
   position: relative;
   padding-left: 14px;
 }
@@ -226,7 +226,7 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: #000000;
+  color: var(--color-text-primary);
 }
 
 .part-list.no-dot li {
@@ -239,7 +239,7 @@
 
 .divider {
   border: 0;
-  border-top: 1px solid #E5E7EB;
+  border-top: 1px solid var(--color-border);
   margin: 0;
 }
 
@@ -269,7 +269,7 @@
 
 .notice-text {
   font-size: 14px !important;
-  color: #575757 !important;
+  color: var(--color-text-secondary) !important;
   padding-left: 14px !important;
 }
 
@@ -290,24 +290,24 @@
 }
 
 .remarks-box {
-  background-color: #F8F9FA;
+  background-color: var(--color-surface-alt);
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--color-border);
   margin-bottom: 16px;
 }
 
 .remarks-title {
   font-size: 16px;
-  font-weight: 500;
-  color: #575757;
-  margin: 0 0 8px 0; /* 모바일 오리지널 간격 복구 */
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  margin: 0 0 8px 0;
 }
 
 .remarks-list {
   padding-left: 20px;
   margin: 0;
-  color: #000000;
+  color: var(--color-text-primary);
 }
 
 .remarks-list li {
