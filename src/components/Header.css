@@ -79,3 +79,98 @@
     height: 48px;
   }
 }
+
+/* ==========================================================================
+   Desktop GNB (Figma 1280px+ Specs)
+   ========================================================================== */
+.desktop-gnb {
+  display: none; /* 모바일 및 태블릿은 GNB 숨김 */
+}
+
+@media (min-width: 1280px) {
+  /* 데스크탑일 땐 로고 영역(헤더 자체)의 스크롤 하단선 제거 */
+  .header.scrolled {
+    border-bottom: 1px solid transparent !important;
+  }
+
+  .desktop-gnb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 88px; /* Figma 높이 88px 준수 */
+    background: var(--color-background);
+    border-bottom: 1px solid transparent; /* 기본 상태는 선 없이 깔끔하게 */
+    transition: border-color 0.3s ease; /* 스크롤 시 부드럽게 선이 나타나도록 페이드 트랜지션 */
+  }
+
+  /* 스크롤 시 헤더에 들어갔던 구분선이 GNB 하단으로 깔끔하게 이동하여 렌더링 */
+  .header.scrolled .desktop-gnb {
+    border-bottom: 1px solid var(--color-surface);
+  }
+
+  .gnb-list {
+    display: flex;
+    list-style: none;
+    padding: 0 64px; /* 페이지 가로 패딩 64px과 칼같이 동기화! */
+    margin: 0 auto; /* 중앙에 정갈하게 정렬 */
+    gap: 56px; /* Figma 아이템 사이 간격 56px 완벽 반영 */
+    width: 100%;
+    max-width: 1328px; /* 본문 핵심 섹션 너비(1200px) + 좌우 패딩(64px * 2)과 완벽 대응하는 1328px 최적화 규격! */
+    box-sizing: border-box;
+    justify-content: space-between; /* 양끝 정렬 선을 페이지의 좌우 64px 라인에 칼같이 밀착 */
+  }
+
+  .gnb-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88px;
+    position: relative;
+  }
+
+  .gnb-link {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 24px; /* Figma fontSize 24px 반영 */
+    font-weight: 500; /* Figma Medium (500) 반영 */
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: pointer; /* 페이지 이동은 없으나 호버/클릭 가능한 메뉴임을 피드백하기 위해 손가락 포인터 선언 */
+    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* 호버 및 액티브 상태 시 4px 블루 밑줄 애니메이션 효과 */
+  .gnb-link::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* GNB 경계선 위에 완벽히 밀착 */
+    left: 0;
+    width: 100%;
+    height: 4px; /* Figma bottom 4px stroke 반영 */
+    background-color: #0E57D0; /* Figma active/hover 브랜드 파란색 */
+    transform: scaleX(0);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gnb-link:hover {
+    color: #0E57D0;
+  }
+
+  .gnb-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* 활성화 상태 (체험하기(예약/신청)이 켜졌을 때) */
+  .gnb-link.active {
+    color: #0E57D0;
+    font-weight: 600; /* Medium(500)보다 명확하도록 세미볼드 가중치 */
+  }
+
+  .gnb-link.active::after {
+    transform: scaleX(1);
+  }
+}

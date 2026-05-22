@@ -81,7 +81,6 @@
 .carousel-container {
   width: 100%;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
@@ -101,9 +100,8 @@
 }
 
 .card-item {
-  flex: 0 0 75%; /* 모바일에서 카드가 75% 너비를 차지하여 다음 카드가 살짝 보이게 함 */
+  flex: 0 0 75%;
   max-width: 300px;
-  scroll-snap-align: center;
   background-color: var(--color-surface);
   border-radius: var(--radius-sm);
   overflow: hidden;
@@ -219,9 +217,9 @@
 
 @media (min-width: 1280px) {
   .card-item {
-    flex: 0 0 560px;
-    max-width: 560px;
-    height: 546px;
+    flex: 0 0 520px;
+    max-width: 520px;
+    height: auto;
   }
   .card-image-wrapper {
     height: auto;
@@ -229,8 +227,7 @@
   }
   .card-info {
     padding: 24px 24px 32px; /* 하단 패딩 태블릿(32px) 맞춤 */
-    height: 218px;
+    height: auto;
     box-sizing: border-box;
-    overflow: hidden;
   }
 }

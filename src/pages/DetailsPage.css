@@ -301,7 +301,7 @@
   font-size: 16px;
   font-weight: 500;
   color: #575757;
-  margin: 0 0 8px 0;
+  margin: 0 0 8px 0; /* 모바일 오리지널 간격 복구 */
 }
 
 .remarks-list {
@@ -312,7 +312,7 @@
 
 .remarks-list li {
   font-size: 16px;
-  margin-bottom: 4px;
+  margin-bottom: 4px; /* 모바일 오리지널 간격 복구 */
 }
 
 .mt-8 {
@@ -506,12 +506,23 @@
     font-size: 20px; /* 모바일 16px */
   }
 
+  /* 넓어진 20px 폰트에 걸맞게 비고란 여백을 시원하게 확장 */
+  .remarks-title {
+    margin-bottom: 16px !important;
+  }
+  .remarks-list li {
+    margin-bottom: 12px !important;
+  }
+
   /* 캡션/작은 글씨 */
   .notice-text {
     font-size: 16px !important; /* 모바일 14px */
   }
   .remarks-box {
+    display: block; /* 찌그러짐 방지를 위해 블록 타입 고정 */
+    width: 100%; /* 태블릿에서는 전체 가로폭 100% 선언 */
     padding: 24px;
+    box-sizing: border-box;
   }
 
   /* 문의사항 배너 */
@@ -522,5 +533,38 @@
   .inquiry-banner-text,
   .inquiry-banner-subtext {
     font-size: 18px; /* 모바일 14px */
+  }
+}
+
+/* ==========================================================================
+   Desktop Layout (1280px+) — 디테일 페이지 데스크탑 최적화
+   ========================================================================== */
+@media (min-width: 1280px) {
+  /* 이미지 및 신청 버튼 컨테이너: 자식들을 왼쪽으로 정렬 */
+  .image-apply-container {
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  /* 대표 이미지: 부모 너비의 55%로 축소 */
+  .program-main-image {
+    width: 55%;
+    max-width: 55%;
+    height: 440px; /* 데스크탑 화면 비율에 맞춘 최적 높이 */
+  }
+
+  /* 신청 버튼: 부모 너비의 55%로 축소 및 왼쪽 정렬 */
+  .btn-apply-program-full {
+    width: 55%;
+    max-width: 55%;
+    margin: 0; /* 여백 리셋 */
+  }
+
+  /* 비고 상자: 오직 데스크탑에서만 가로 너비를 1/3 비율에 40px의 보너스 여백을 더한 크기로 제한 */
+  .remarks-box {
+    display: block;
+    width: calc(100% / 3 + 40px) !important;
+    min-width: 340px; /* 데스크탑에서 글자가 너무 구겨지지 않도록 안전 최소 너비 확보 */
+    box-sizing: border-box;
   }
 }

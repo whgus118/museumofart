@@ -58,6 +58,39 @@ export default function Header() {
           </button>
         </div>
       </div>
+
+      {/* 데스크탑 GNB (1280px 해상도 이상 전체화면에서만 정교하게 표시) */}
+      <nav className="desktop-gnb">
+        <ul className="gnb-list">
+          <li className="gnb-item">
+            <span className="gnb-link">관람</span>
+          </li>
+          <li className="gnb-item">
+            <span className="gnb-link">전시</span>
+          </li>
+          <li className="gnb-item">
+            <span 
+              className={`gnb-link ${
+                location.pathname.startsWith('/apply') || 
+                location.pathname.startsWith('/details') || 
+                location.pathname.startsWith('/apply-complete') 
+                  ? 'active' : ''
+              }`}
+            >
+              체험하기(예약/신청)
+            </span>
+          </li>
+          <li className="gnb-item">
+            <span className="gnb-link">문화 프로그램</span>
+          </li>
+          <li className="gnb-item">
+            <span className="gnb-link">라이브러리·소장품</span>
+          </li>
+          <li className="gnb-item">
+            <span className="gnb-link">소식·홍보</span>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 }

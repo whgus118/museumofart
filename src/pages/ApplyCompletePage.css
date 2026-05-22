@@ -198,3 +198,61 @@
     border-radius: 12px;
   }
 }
+
+/* ==========================================================================
+   Desktop Layout (1280px+) — 메인페이지 섹션 가로폭(1200px) 일치
+   ========================================================================== */
+@media (min-width: 1280px) {
+  /* 완료 콘텐츠 전체 영역 가운데 정렬 고정 (신청 페이지와 대칭 밸런스 일치) */
+  .complete-content {
+    padding: 32px 64px 64px 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 부모가 중심 축을 잡아 전체화면일 때 완료 폼 콘텐츠를 화면 정중앙에 배치! */
+    box-sizing: border-box !important;
+  }
+
+  .complete-title {
+    font-size: 30px; /* 28px -> 30px로 상향 */
+    margin-top: 32px;
+    margin-bottom: 56px;
+    width: 100%; /* 1200px 고정 대신 100%로 지정하여 우측 패딩 64px 완벽 사수! */
+    max-width: 1200px; /* 최대 너비는 1200px로 정숙하게 제한 */
+    text-align: left; /* 정보 상자 왼쪽 끝선(좌측 64px)에 완벽 호응 매칭! */
+    box-sizing: border-box !important;
+  }
+
+  /* 정보 컨테이너: 메인페이지 전체화면 섹션 너비인 1200px로 제한하되 우측 패딩 연동 */
+  .complete-info-container {
+    width: 100%; /* 우측 패딩 64px 유실 방지 */
+    max-width: 1200px;
+    padding: 48px;
+    gap: 64px;
+    box-sizing: border-box !important; /* 패딩이 가로폭 100% 안으로 흡수되도록 강제! */
+  }
+
+  .info-label {
+    font-size: 22px; /* 20px -> 22px 일치 */
+    width: 140px;
+  }
+
+  .info-value {
+    font-size: 22px; /* 20px -> 22px 일치 */
+  }
+
+  /* 확인 버튼 영역: 정보 컨테이너와 정렬선 일치 및 패딩 연동 */
+  .complete-actions {
+    width: 100%; /* 우측 패딩 64px 유실 방지 */
+    max-width: 1200px;
+    box-sizing: border-box !important;
+    display: flex;
+    justify-content: center; /* 버튼을 가로 정중앙 배치! */
+  }
+
+  .btn-confirm {
+    width: 416px; /* 데스크탑 전용 골든 규격인 416px로 가로폭 정교화 고정! */
+    height: 72px; /* 64px -> 72px 상향 (신청폼 버튼들과 동기화) */
+    font-size: 24px; /* 22px -> 24px 상향 */
+    border-radius: 12px;
+  }
+}

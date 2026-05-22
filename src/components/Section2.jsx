@@ -53,8 +53,6 @@ export default function Section2() {
   const onMouseDown = useCallback((e) => {
     cancelAnimationFrame(rafId.current);
     isDragging.current = true;
-    startX.current = e.pageX - carouselRef.current.offsetLeft;
-    scrollLeft.current = carouselRef.current.scrollLeft;
     lastX.current = e.pageX;
     velocity.current = 0;
     carouselRef.current.style.cursor = 'grabbing';
@@ -64,11 +62,10 @@ export default function Section2() {
   const onMouseMove = useCallback((e) => {
     if (!isDragging.current) return;
     e.preventDefault();
-    const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX.current) * 1.2;
-    velocity.current = e.pageX - lastX.current;
+    const dx = e.pageX - lastX.current;
+    velocity.current = dx;
     lastX.current = e.pageX;
-    carouselRef.current.scrollLeft = scrollLeft.current - walk;
+    carouselRef.current.scrollLeft -= dx;
   }, []);
 
   const onMouseUpOrLeave = useCallback(() => {
@@ -81,7 +78,7 @@ export default function Section2() {
     const momentum = () => {
       if (Math.abs(velocity.current) < 0.5) return;
       carouselRef.current.scrollLeft -= velocity.current * 1.2;
-      velocity.current *= 0.92; // 감속 계수
+      velocity.current *= 0.95; // 감속 계수
       rafId.current = requestAnimationFrame(momentum);
     };
     rafId.current = requestAnimationFrame(momentum);
