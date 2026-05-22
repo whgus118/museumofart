@@ -44,8 +44,6 @@ export default function Section2() {
 
   const carouselRef = useRef(null);
   const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
   const velocity = useRef(0);
   const lastX = useRef(0);
   const rafId = useRef(null);

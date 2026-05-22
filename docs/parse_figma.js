@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 const data = JSON.parse(fs.readFileSync('C:\\Users\\308\\.mcp-figma\\cache\\file_nodes_giv7zNQhUpbiHessc6bbFq_1778557292734.json', 'utf8'));
 

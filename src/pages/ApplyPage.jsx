@@ -169,13 +169,6 @@ export default function ApplyPage() {
     }));
   };
 
-  const handleApplyClick = (e) => {
-    if (!agreed) {
-      setShowAgreementError(true);
-      e.preventDefault();
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -674,7 +667,6 @@ export default function ApplyPage() {
             </button>
             <button
               type="submit"
-              onClick={handleApplyClick}
               className="btn-submit"
             >
               신청하기
