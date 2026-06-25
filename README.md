@@ -16,7 +16,7 @@
 
 - **Live Demo:** [배포된 웹사이트 링크](https://whgus118.github.io/museumofart/)
 - **GitHub Repository:** [깃허브 링크](https://github.com/whgus118/museumofart)
-- **Design (Figma):** [피그마 시안 링크](https://www.figma.com/design/giv7zNQhUpbiHessc6bbFq/%EA%B3%B5%EA%B3%B5%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B0%9C%EC%84%A0--%EC%95%88%ED%8B%B0%EA%B7%B8%EB%9E%98%EB%B9%84%ED%8B%B0-?node-id=244-767&t=KC6hfnJDsGSI89hw-1)
+- **Design (Figma):** [피그마 시안 링크](https://www.figma.com/design/giv7zNQhUpbiHessc6bbFq/%EA%B3%B5%EA%B3%B5%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B0%9C%EC%84%A0--%EC%95%88%ED%8B%B0%EA%B7%B8%EB%9E%98%EB%B9%84%ED%8B%B0-?)
 
 ---
 
