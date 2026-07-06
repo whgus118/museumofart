@@ -16,7 +16,7 @@ const banners = [
 export default function MainBanner() {
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(() => window.matchMedia('(min-width: 1280px)').matches);
   const navigate = useNavigate();
 
   const goNext = useCallback(() => {
@@ -43,7 +43,6 @@ export default function MainBanner() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 1280px)');
-    setIsDesktop(mediaQuery.matches);
     const handler = (e) => setIsDesktop(e.matches);
     mediaQuery.addEventListener('change', handler);
     return () => mediaQuery.removeEventListener('change', handler);

@@ -1,12 +1,22 @@
 import { useState, useEffect } from 'react';
 import './Section1.css';
+import guideIcon from '../assets/guide-icon.svg';
+import facilityIcon from '../assets/facility-icon.svg';
+import experienceIcon from '../assets/experience-icon.svg';
+import programIcon from '../assets/program-icon.svg';
+
+const iconMap = {
+  'guide-icon.svg': guideIcon,
+  'facility-icon.svg': facilityIcon,
+  'experience-icon.svg': experienceIcon,
+  'program-icon.svg': programIcon,
+};
 
 export default function Section1() {
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(() => window.matchMedia('(min-width: 1280px)').matches);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 1280px)');
-    setIsDesktop(mediaQuery.matches);
     const handler = (e) => setIsDesktop(e.matches);
     mediaQuery.addEventListener('change', handler);
     return () => mediaQuery.removeEventListener('change', handler);
@@ -44,7 +54,7 @@ export default function Section1() {
               </div>
               <div className="btn-icon" aria-hidden="true">
                 <img 
-                  src={new URL(`../assets/${item.icon}`, import.meta.url).href} 
+                  src={iconMap[item.icon]} 
                   alt="" 
                   className="menu-icon-img" 
                 />

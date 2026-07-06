@@ -17,7 +17,7 @@ function recordAccessibilityScanResult(pageName, violations) {
     try {
       const fileContent = fs.readFileSync(reportPath, 'utf-8');
       currentReports = JSON.parse(fileContent);
-    } catch (error) {
+    } catch {
       currentReports = [];
     }
   }
@@ -61,7 +61,7 @@ test.describe('웹 접근성 자동화 테스트 및 종합 리포팅 (Web Acces
     if (fs.existsSync(reportPath)) {
       try {
         fs.unlinkSync(reportPath);
-      } catch (err) {
+      } catch {
         // 무시
       }
     }

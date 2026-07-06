@@ -1,5 +1,19 @@
 import { useLocation } from "react-router-dom";
 import "./Footer.css";
+import instagramIcon from "../assets/Instagram-Icon.svg";
+import facebookIcon from "../assets/Facebook-Icon.svg";
+import youtubeIcon from "../assets/Youtube-Icon.svg";
+import blogIcon from "../assets/Blog-Icon.svg";
+import kakaoIcon from "../assets/Kakao-Icon.svg";
+
+const snsIconMap = {
+  "Instagram-Icon.svg": instagramIcon,
+  "Facebook-Icon.svg": facebookIcon,
+  "Youtube-Icon.svg": youtubeIcon,
+  "Blog-Icon.svg": blogIcon,
+  "Kakao-Icon.svg": kakaoIcon,
+};
+
 
 export default function Footer() {
   const location = useLocation();
@@ -46,7 +60,7 @@ export default function Footer() {
                 }}
               >
                 <img
-                  src={new URL(`../assets/${sns.icon}`, import.meta.url).href}
+                  src={snsIconMap[sns.icon]}
                   alt={sns.name}
                   className="sns-icon-img"
                 />
